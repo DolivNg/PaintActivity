@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PaintActivity</string>
+    <string name="bttn_play">Play</string>
+    <string name="bttn_option">Option</string>
+    <string name="bttn_make_pen">Make Stilus</string>
+    <string name="bttn_rule_game">Rule Game</string>
 </resources>

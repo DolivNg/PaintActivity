@@ -9,6 +9,11 @@ import android.view.ViewGroup
 import com.vassa.paintactivity.R
 import com.vassa.paintactivity.ui.fragments.menu.viewmodel.MainMenuViewModel
 
+/**
+ * @author vassa
+ * version code 1.0
+ * */
+
 class MainMenuFragment : Fragment() {
 
     companion object {
