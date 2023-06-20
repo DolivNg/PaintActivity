@@ -4,4 +4,7 @@
     <string name="bttn_option">Option</string>
     <string name="bttn_make_pen">Make Stilus</string>
     <string name="bttn_rule_game">Rule Game</string>
+    <string name="bttn_multiplayer">Multiplayer</string>
+    <string name="bttn_local_game">Local Game</string>
+    <string name="bttn_party_game">Party Game</string>
 </resources>
