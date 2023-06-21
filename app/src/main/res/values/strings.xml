@@ -7,4 +7,19 @@
     <string name="bttn_multiplayer">Multiplayer</string>
     <string name="bttn_local_game">Local Game</string>
     <string name="bttn_party_game">Party Game</string>
+    <string name="bttn_apply">Apply</string>
+    <string name="tv_edit_profile">Edit Profile</string>
+    <string name="tv_avatar">Change avatar</string>
+    <string name="tv_profile_name">Profile name</string>
+    <string name="tv_local_profile">Local profile</string>
+    <string name="bttn_local">Load</string>
+    <string name="bttn_add">Add</string>
+    <string name="bttn_delete">Delete</string>
+    <string name="tv_sound_option">Sound Option</string>
+    <string name="tv_sound">Sound</string>
+    <string name="tv_pack_options">Edit Pack</string>
+    <string name="tv_rename">Rename</string>
+    <string name="bttn_new">New</string>
+    <string name="bttn_edit">Edit</string>
+    <string name="bttn_cancel">Cancel</string>
 </resources>
