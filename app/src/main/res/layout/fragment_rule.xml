@@ -7,11 +7,11 @@
     tools:context=".ui.fragments.makepen.MakePenFragment" >
 
     <TextView
-        android:id="@+id/tVMakePenTopic"
+        android:id="@+id/tVRuleTopic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/tv_make_pen"
+        android:text="@string/tv_rule"
         android:textSize="24sp" />
 
     <ScrollView
@@ -24,7 +24,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/tVMakePenGaidText"
+                android:id="@+id/tVMakeRuleText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView" />

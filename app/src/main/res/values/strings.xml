@@ -22,4 +22,10 @@
     <string name="bttn_new">New</string>
     <string name="bttn_edit">Edit</string>
     <string name="bttn_cancel">Cancel</string>
+    <string name="tv_select_avatar">Selelect Avatar</string>
+    <string name="tv_make_pen">Make Pen</string>
+    <string name="tv_rule">Rule</string>
+    <string name="tv_achivment">Achievement</string>
+    <string name="bttn_cencel">Cencel</string>
+    <string name="bttn_load">Load</string>
 </resources>
