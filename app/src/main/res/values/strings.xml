@@ -28,4 +28,5 @@
     <string name="tv_achivment">Achievement</string>
     <string name="bttn_cencel">Cencel</string>
     <string name="bttn_load">Load</string>
+    <string name="tv_select_player">Players</string>
 </resources>
