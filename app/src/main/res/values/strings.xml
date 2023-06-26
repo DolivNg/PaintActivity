@@ -37,4 +37,6 @@
     <string name="sw_random_pack">Random Pack</string>
     <string name="tv_timer">Timer</string>
     <string name="tv_other_options">Other Options</string>
+    <string name="tv_ink">Ink in(mm)</string>
+    <string name="sw_timer">Use timer</string>
 </resources>

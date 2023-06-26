@@ -92,7 +92,7 @@
                 android:textSize="24sp" />
 
             <Switch
-                android:id="@+id/swAuttorParty"
+                android:id="@+id/swAutorLocal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sw_autor" />
@@ -103,14 +103,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVPackParty"
+                    android:id="@+id/tVPackLocal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:text="@string/tv_pack" />
 
                 <TextView
-                    android:id="@+id/tVPackShower"
+                    android:id="@+id/tVPackShowerLocal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -118,19 +118,19 @@
             </LinearLayout>
 
             <Switch
-                android:id="@+id/swRandomPackParty"
+                android:id="@+id/swRandomPackLocal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sw_random_pack" />
 
             <View
-                android:id="@+id/view5"
+                android:id="@+id/board6"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:background="@drawable/board" />
 
             <TextView
-                android:id="@+id/tVOtherSettimgParty"
+                android:id="@+id/tVOtherSettingLocal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -139,30 +139,67 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tVInkLocal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tv_ink" />
+
+                <Button
+                    android:id="@+id/bttnPlusInkLocal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+" />
+
+                <TextView
+                    android:id="@+id/tVInkCountLocal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/bttnMunusInkLocal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/swTimerLocal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sw_timer" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVTimerParty"
+                    android:id="@+id/tVTimerLocal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/tv_timer" />
 
                 <Button
-                    android:id="@+id/bttnPlusTimerParty"
+                    android:id="@+id/bttnPlusTimerLocal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+" />
 
                 <TextView
-                    android:id="@+id/tVTimeCountParty"
+                    android:id="@+id/tVTimeCountLocal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1" />
 
                 <Button
-                    android:id="@+id/bttnMunusTimerParty"
+                    android:id="@+id/bttnMunusTimerLocal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-" />
