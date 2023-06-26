@@ -29,4 +29,12 @@
     <string name="bttn_cencel">Cencel</string>
     <string name="bttn_load">Load</string>
     <string name="tv_select_player">Players</string>
+    <string name="tv_pack_setting">Pack Setting</string>
+    <string name="tv_players">Players</string>
+    <string name="sw_autor">Autor</string>
+    <string name="tv_imposters">Imposters</string>
+    <string name="tv_pack">Pack</string>
+    <string name="sw_random_pack">Random Pack</string>
+    <string name="tv_timer">Timer</string>
+    <string name="tv_other_options">Other Options</string>
 </resources>
