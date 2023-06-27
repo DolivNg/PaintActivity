@@ -39,4 +39,9 @@
     <string name="tv_other_options">Other Options</string>
     <string name="tv_ink">Ink in(mm)</string>
     <string name="sw_timer">Use timer</string>
+    <string name="tv_connect_topic">Connecting</string>
+    <string name="bttn_connect">Connect</string>
+    <string name="tv_lobby">Lobby</string>
+    <string name="tv_profile">Profile</string>
+    <string name="bttn_create_lobby">Create Lobby</string>
 </resources>

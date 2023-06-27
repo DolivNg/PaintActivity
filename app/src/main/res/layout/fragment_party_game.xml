@@ -2,18 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.fragments.party.PartyGameFragment">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <include
                 layout="@layout/layout_menu_player"
@@ -58,7 +59,7 @@
                     android:id="@+id/bttnPlusImposterParty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:minWidth="5dp"
                     android:text="+" />
 
                 <TextView
@@ -73,14 +74,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    android:minWidth="5dp"
                     android:text="-" />
             </LinearLayout>
 
             <View
-                android:id="@+id/view4"
+
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
-                android:background="@drawable/board" />
+                android:background="@color/material_dynamic_neutral30" />
 
             <TextView
                 android:id="@+id/tVTopicTypeGame"
@@ -92,7 +94,7 @@
                 android:textSize="24sp" />
 
             <Switch
-                android:id="@+id/swAutorLocal"
+                android:id="@+id/swAutorParty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sw_autor" />
@@ -103,14 +105,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVPackLocal"
+                    android:id="@+id/tVPackParty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:text="@string/tv_pack" />
 
                 <TextView
-                    android:id="@+id/tVPackShowerLocal"
+                    android:id="@+id/tVPackShowerParty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -118,58 +120,26 @@
             </LinearLayout>
 
             <Switch
-                android:id="@+id/swRandomPackLocal"
+                android:id="@+id/swRandomPackParty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sw_random_pack" />
 
             <View
-                android:id="@+id/board6"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
-                android:background="@drawable/board" />
+                android:background="@color/material_dynamic_neutral30" />
 
             <TextView
-                android:id="@+id/tVOtherSettingLocal"
+                android:id="@+id/tVOtherSettingParty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/tv_other_options"
                 android:textSize="24sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tVInkLocal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/tv_ink" />
-
-                <Button
-                    android:id="@+id/bttnPlusInkLocal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+" />
-
-                <TextView
-                    android:id="@+id/tVInkCountLocal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1" />
-
-                <Button
-                    android:id="@+id/bttnMunusInkLocal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="-" />
-            </LinearLayout>
-
             <Switch
-                android:id="@+id/swTimerLocal"
+                android:id="@+id/swTimerParty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sw_timer" />
@@ -180,32 +150,44 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVTimerLocal"
+                    android:id="@+id/tVTimerParty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/tv_timer" />
 
                 <Button
-                    android:id="@+id/bttnPlusTimerLocal"
+                    android:id="@+id/bttnPlusTimerParty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="5dp"
                     android:text="+" />
 
                 <TextView
-                    android:id="@+id/tVTimeCountLocal"
+                    android:id="@+id/tVTimeCountParty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1" />
 
                 <Button
-                    android:id="@+id/bttnMunusTimerLocal"
+                    android:id="@+id/bttnMunusTimerParty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="5dp"
                     android:text="-" />
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/bttnPlayParty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/bttn_play" />
 
 </LinearLayout>

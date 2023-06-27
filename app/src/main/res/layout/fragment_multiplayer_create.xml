@@ -1,28 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="8dp"
     android:orientation="vertical"
-    tools:context=".ui.fragments.local.LocalGameFragment">
-
+    tools:context=".ui.fragments.multyplayer.create.MultiplayerCreateFragment">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/tVTopicCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/tv_profile"
+                android:textSize="24sp" />
+
             <include
-                layout="@layout/layout_menu_player"
+                layout="@layout/layout_profile_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/material_dynamic_neutral30" />
+
+            <TextView
+                android:id="@+id/teVConnectTopic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/tv_connect_topic"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edTConnect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Ip"
+                    android:inputType="text"
+                    android:text="Name" />
+
+                <Button
+                    android:id="@+id/bttnConnect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Ip"
+                    android:text="@string/bttn_connect" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/material_dynamic_neutral30" />
+
+            <TextView
+                android:id="@+id/tVPlayerSettingTopic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/tv_players"
+                android:textSize="24sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -30,18 +87,34 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVPlayerCountLocal"
+                    android:id="@+id/tVPlayerCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
                     android:text="@string/tv_players" />
 
-                <TextView
-                    android:id="@+id/tVCountLocal"
+                <Button
+                    android:id="@+id/bttnPlusPlayerMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+
+                    android:minWidth="5dp"
+                    android:text="+" />
+
+                <TextView
+                    android:id="@+id/tVPlayerCountMult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/bttnMinusPlayerMult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:minWidth="5dp"
+                    android:text="-" />
 
             </LinearLayout>
 
@@ -52,14 +125,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVImpostersLocal"
+                    android:id="@+id/tVImpostersMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="4"
                     android:text="@string/tv_imposters" />
 
                 <Button
-                    android:id="@+id/bttnPlusImposterLocal"
+                    android:id="@+id/bttnPlusImposterMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -67,17 +140,16 @@
                     android:text="+" />
 
                 <TextView
-                    android:id="@+id/tVImposterCountLocal"
+                    android:id="@+id/tVImposterCountMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
                     android:text="1" />
 
                 <Button
-                    android:id="@+id/bttnMinusImposterLocal"
+                    android:id="@+id/bttnMinusImposterMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:minWidth="5dp"
                     android:text="-" />
             </LinearLayout>
@@ -86,10 +158,10 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
-                android:background="@color/material_dynamic_neutral30" />
+                android:background="@drawable/board" />
 
             <TextView
-                android:id="@+id/tVPacksTopicLocal"
+                android:id="@+id/tVPacksTopicMult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -97,7 +169,7 @@
                 android:textSize="24sp" />
 
             <Switch
-                android:id="@+id/swAutorLocal"
+                android:id="@+id/swAutorMult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sw_autor" />
@@ -108,14 +180,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVPackLocal"
+                    android:id="@+id/tVPackMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:text="@string/tv_pack" />
 
                 <TextView
-                    android:id="@+id/tVPackShowerLocal"
+                    android:id="@+id/tVPackShowerMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -123,18 +195,19 @@
             </LinearLayout>
 
             <Switch
-                android:id="@+id/swRandomPackLocal"
+                android:id="@+id/swRandomPackMult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sw_random_pack" />
 
             <View
+
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:background="@color/material_dynamic_neutral30" />
 
             <TextView
-                android:id="@+id/tVOtherSettingLocal"
+                android:id="@+id/tVOtherSettingMult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -147,27 +220,27 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVInkLocal"
+                    android:id="@+id/tVInkMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/tv_ink" />
 
                 <Button
-                    android:id="@+id/bttnPlusInkLocal"
+                    android:id="@+id/bttnPlusInkMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="5dp"
                     android:text="+" />
 
                 <TextView
-                    android:id="@+id/tVInkCountLocal"
+                    android:id="@+id/tVInkCountMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1" />
 
                 <Button
-                    android:id="@+id/bttnMunusInkLocal"
+                    android:id="@+id/bttnMunusInkMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="5dp"
@@ -175,7 +248,7 @@
             </LinearLayout>
 
             <Switch
-                android:id="@+id/swTimerLocal"
+                android:id="@+id/swTimerMult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sw_timer" />
@@ -186,27 +259,27 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tVTimerLocal"
+                    android:id="@+id/tVTimerMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/tv_timer" />
 
                 <Button
-                    android:id="@+id/bttnPlusTimerLocal"
+                    android:id="@+id/bttnPlusTimerMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="5dp"
                     android:text="+" />
 
                 <TextView
-                    android:id="@+id/tVTimeCountLocal"
+                    android:id="@+id/tVTimeCountMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1" />
 
                 <Button
-                    android:id="@+id/bttnMunusTimerLocal"
+                    android:id="@+id/bttnMinusTimerMult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="5dp"
@@ -216,10 +289,9 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/bttnPlayLocal"
+        android:id="@+id/bttnCreateLobby"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        android:text="@string/bttn_play" />
+        android:text="@string/bttn_create_lobby" />
 </LinearLayout>
