@@ -5,7 +5,11 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
-
+/**
+ * @author Vassa
+ * 03.07.2023
+ * version code = 1
+ * */
 @Entity(
     tableName = "word",
     indices = [Index("id")],
