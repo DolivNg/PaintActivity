@@ -15,50 +15,50 @@ import com.vassa.paintactivity.domain.entity.profile.LocalProfileDomEntity
  * */
 interface DataBaseRepository {
 
-    fun loadFullPack(): ArrayList<FullPackDomEntity>
+    suspend fun loadFullPack(): ArrayList<FullPackDomEntity>
 
-    fun loadPack(id: Int): ArrayList<PackDomEntity>
+    suspend fun loadPack(id: Int): ArrayList<PackDomEntity>
 
-    fun insertPack(pack: PackDomEntity)
+    suspend fun insertPack(pack: PackDomEntity)
 
-    fun deletePack(pack: PackDomEntity)
+    suspend fun deletePack(pack: PackDomEntity)
 
-    fun deletePackId(id: Int)
-
-
-    fun loadWordsLang(id: Int, lang: String): ArrayList<WordDomEntity>
-
-    fun loadWordsAll(id: Int, lang: String): ArrayList<WordDomEntity>
-
-    fun loadWordsId(id: Int, lang: String): ArrayList<WordDomEntity>
-
-    fun deleteWord(id: Int)
-
-    fun deleteWordFromPack(pack_id: Int, id: Int)
+    suspend fun deletePackId(id: Int)
 
 
-    fun loadLang(id: Int): LangDomEntity
+    suspend fun loadWordsLang(id: Int, lang: String): ArrayList<WordDomEntity>
 
-    fun loadLangAll(): ArrayList<LangDomEntity>
+    suspend fun loadWordsAll(id: Int, lang: String): ArrayList<WordDomEntity>
 
-    fun insertLangAll(langDomEntity: LangDomEntity)
+    suspend fun loadWordsId(id: Int, lang: String): ArrayList<WordDomEntity>
 
-    fun deleteLang(id: Int)
+    suspend fun deleteWord(id: Int)
 
-
-    fun insertGlobalProfile(globalProfileDomEntity: GlobalProfileDomEntity)
-
-    fun loadGlobalProfile(): GlobalProfileDomEntity
-
-    fun updateGlobalProfile(id: Int, globalProfileDomEntity: GlobalProfileDomEntity)
+    suspend fun deleteWordFromPack(pack_id: Int, id: Int)
 
 
-    fun loadLocalProfile(id: Int): LocalProfileDomEntity
+    suspend fun loadLang(id: Int): LangDomEntity
 
-    fun updateLocalProfile(id: Int, localProfileDomEntity: LocalProfileDomEntity)
+    suspend fun loadLangAll(): ArrayList<LangDomEntity>
 
-    fun insertLocalProfile(localProfileDomEntity: LocalProfileDomEntity)
+    suspend fun insertLangAll(langDomEntity: LangDomEntity)
 
-    fun deleteLocalProfile(id: Int)
+    suspend fun deleteLang(id: Int)
+
+
+    suspend fun insertGlobalProfile(globalProfileDomEntity: GlobalProfileDomEntity)
+
+    suspend fun loadGlobalProfile(): GlobalProfileDomEntity
+
+    suspend fun updateGlobalProfile(id: Int, globalProfileDomEntity: GlobalProfileDomEntity)
+
+
+    suspend fun loadLocalProfile(id: Int): LocalProfileDomEntity
+
+    suspend fun updateLocalProfile(id: Int, localProfileDomEntity: LocalProfileDomEntity)
+
+    suspend fun insertLocalProfile(localProfileDomEntity: LocalProfileDomEntity)
+
+    suspend fun deleteLocalProfile(id: Int)
 
 }
