@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
  * 03.07.2023
  * version code = 1
  * */
-@Entity
+@Entity("lang")
 data class LangDataEntity(
     @PrimaryKey var id: Int,
     @ColumnInfo(name = "name") var name: String
