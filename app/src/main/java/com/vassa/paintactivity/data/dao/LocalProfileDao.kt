@@ -6,23 +6,28 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.vassa.paintactivity.data.entity.profiles.GlobalProfileDataEntity
+/**
+ * @author Vassa
+ * Version 1.1
+ * 06.07.2023
+ * */
 @Dao
 interface LocalProfileDao {
     @Insert(entity = GlobalProfileDataEntity::class)
-    fun insertNewGlobalProfileDataEntity(globalProfileDataEntity: GlobalProfileDataEntity)
+    suspend fun insertNewGlobalProfileDataEntity(globalProfileDataEntity: GlobalProfileDataEntity)
 
     @Query("SELECT * FROM global_profile")
-    fun getAllGlobalProfileDataEntity(): List<GlobalProfileDataEntity>
+    suspend fun getAllGlobalProfileDataEntity(): List<GlobalProfileDataEntity>
 
     @Query("SELECT * FROM global_profile WHERE id = :id")
-    fun getGlobalProfileDataEntity(id: Int): GlobalProfileDataEntity
+    suspend fun getGlobalProfileDataEntity(id: Int): GlobalProfileDataEntity
 
     @Query("DELETE FROM global_profile WHERE id = :id")
-    fun deleteGlobalProfileDataEntityById(id: Long)
+    suspend fun deleteGlobalProfileDataEntityById(id: Long)
 
     @Delete(entity = GlobalProfileDataEntity::class)
-    fun deleteGlobalProfileDataEntity(globalProfileDataEntity: GlobalProfileDataEntity)
+    suspend fun deleteGlobalProfileDataEntity(globalProfileDataEntity: GlobalProfileDataEntity)
 
     @Update(entity = GlobalProfileDataEntity::class)
-    fun updateGlobalProfileDataEntity(globalProfileDataEntity: GlobalProfileDataEntity)
+    suspend fun updateGlobalProfileDataEntity(globalProfileDataEntity: GlobalProfileDataEntity)
 }

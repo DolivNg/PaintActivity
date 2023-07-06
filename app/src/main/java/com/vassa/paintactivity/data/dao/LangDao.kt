@@ -5,22 +5,27 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.vassa.paintactivity.data.entity.pack.LangDataEntity
+/**
+ * @author Vassa
+ * Version 1.1
+ * 06.07.2023
+ * */
 @Dao
 interface LangDao {
 
     @Insert(entity = LangDataEntity::class)
-    fun insertNewLangDataEntity(langDataEntity: LangDataEntity)
+    suspend fun insertNewLangDataEntity(langDataEntity: LangDataEntity)
 
     @Query("SELECT * FROM lang")
-    fun getAllLangDataEntity(): List<LangDataEntity>
+    suspend fun getAllLangDataEntity(): List<LangDataEntity>
 
     @Query("SELECT * FROM lang WHERE id = :id")
-    fun getLangDataEntity(id: Int): LangDataEntity
+    suspend fun getLangDataEntity(id: Int): LangDataEntity
 
     @Query("DELETE FROM lang WHERE id = :id")
-    fun deleteLangDataEntityById(id: Long)
+    suspend fun deleteLangDataEntityById(id: Long)
 
     @Update(entity = LangDataEntity::class)
-    fun updateLangDataEntity(langDataEntity: LangDataEntity)
+    suspend fun updateLangDataEntity(langDataEntity: LangDataEntity)
 
 }
