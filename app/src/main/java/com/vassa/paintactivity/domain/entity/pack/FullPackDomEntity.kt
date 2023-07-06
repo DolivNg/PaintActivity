@@ -11,5 +11,5 @@ data class FullPackDomEntity(
     var name : String,
     var version : Int,
     var standard : Boolean,
-    var wordArray : ArrayList<WordDataEntity>
+    var wordArray : ArrayList<WordDomEntity>
 )
