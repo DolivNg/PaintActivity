@@ -2,6 +2,10 @@ package com.vassa.paintactivity.data.repository
 
 import android.content.Context
 import com.vassa.paintactivity.data.DataBaseApp
+import com.vassa.paintactivity.data.convertor.WordConvertor
+import com.vassa.paintactivity.data.entity.pack.LangDataEntity
+import com.vassa.paintactivity.data.entity.pack.PackDataEntity
+import com.vassa.paintactivity.data.entity.pack.WordDataEntity
 import com.vassa.paintactivity.domain.entity.pack.FullPackDomEntity
 import com.vassa.paintactivity.domain.entity.pack.LangDomEntity
 import com.vassa.paintactivity.domain.entity.pack.PackDomEntity
@@ -9,10 +13,29 @@ import com.vassa.paintactivity.domain.entity.pack.WordDomEntity
 import com.vassa.paintactivity.domain.entity.profile.GlobalProfileDomEntity
 import com.vassa.paintactivity.domain.entity.profile.LocalProfileDomEntity
 import com.vassa.paintactivity.domain.repositories.DataBaseRepository
-
-class DataBaseRepositoryImpl(context: Context,db : DataBaseApp) : DataBaseRepository{
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import java.lang.reflect.Array
+/**
+ * @author Vassa
+ * Version 1.2
+ * 06.07.2023
+ * */
+class DataBaseRepositoryImpl(context: Context,var db : DataBaseApp) : DataBaseRepository{
     override suspend fun loadFullPack(): ArrayList<FullPackDomEntity> {
-        TODO("Not yet implemented")
+        var a = db.getPackDao().getAllPackDataEntity() as ArrayList<PackDataEntity>
+        var b = db.getWordDao().getAllWordDataEntity() as ArrayList<WordDataEntity>
+        var c = ArrayList<FullPackDomEntity>()
+        a.forEach{pack ->
+            var l = ArrayList<WordDataEntity>()
+            b.forEach {
+                if (pack.id == it.packId)
+                    l.add(it)
+            }
+            c.add(FullPackDomEntity(pack.id,pack.name,pack.version,pack.standard,WordConvertor.wordDataToDomListConvertor(l)))
+        }
+
+        return c
     }
 
     override suspend fun loadPack(id: Int): ArrayList<PackDomEntity> {
@@ -30,6 +53,7 @@ class DataBaseRepositoryImpl(context: Context,db : DataBaseApp) : DataBaseReposi
     override suspend fun deletePackId(id: Int) {
         TODO("Not yet implemented")
     }
+
 
     override suspend fun loadWordsLang(id: Int, lang: String): ArrayList<WordDomEntity> {
         TODO("Not yet implemented")
