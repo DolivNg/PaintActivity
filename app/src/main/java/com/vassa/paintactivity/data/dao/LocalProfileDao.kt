@@ -5,29 +5,30 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.vassa.paintactivity.data.entity.profiles.GlobalProfileDataEntity
+import com.vassa.paintactivity.data.entity.profiles.LocalProfileDataEntity
+
 /**
  * @author Vassa
- * Version 1.1
+ * Version 1.2
  * 06.07.2023
  * */
 @Dao
 interface LocalProfileDao {
-    @Insert(entity = GlobalProfileDataEntity::class)
-    suspend fun insertNewGlobalProfileDataEntity(globalProfileDataEntity: GlobalProfileDataEntity)
+    @Insert(entity = LocalProfileDataEntity::class)
+    suspend fun insertNewLocalProfileDataEntity(localProfileDataEntity: LocalProfileDataEntity)
 
-    @Query("SELECT * FROM global_profile")
-    suspend fun getAllGlobalProfileDataEntity(): List<GlobalProfileDataEntity>
+    @Query("SELECT * FROM local_profile")
+    suspend fun getAllLocalProfileDataEntity(): List<LocalProfileDataEntity>
 
-    @Query("SELECT * FROM global_profile WHERE id = :id")
-    suspend fun getGlobalProfileDataEntity(id: Int): GlobalProfileDataEntity
+    @Query("SELECT * FROM local_profile WHERE id = :id")
+    suspend fun getLocalProfileDataEntity(id: Int): LocalProfileDataEntity
 
-    @Query("DELETE FROM global_profile WHERE id = :id")
-    suspend fun deleteGlobalProfileDataEntityById(id: Long)
+    @Query("DELETE FROM local_profile WHERE id = :id")
+    suspend fun deleteLocalProfileDataEntityById(id: Int)
 
-    @Delete(entity = GlobalProfileDataEntity::class)
-    suspend fun deleteGlobalProfileDataEntity(globalProfileDataEntity: GlobalProfileDataEntity)
+    @Delete(entity = LocalProfileDataEntity::class)
+    suspend fun deleteLocalProfileDataEntity(localProfileDataEntity: LocalProfileDataEntity)
 
-    @Update(entity = GlobalProfileDataEntity::class)
-    suspend fun updateGlobalProfileDataEntity(globalProfileDataEntity: GlobalProfileDataEntity)
+    @Update(entity = LocalProfileDataEntity::class)
+    suspend fun updateLocalProfileDataEntity(localProfileDataEntity: LocalProfileDataEntity)
 }

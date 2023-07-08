@@ -7,7 +7,7 @@ import androidx.room.Update
 import com.vassa.paintactivity.data.entity.pack.LangDataEntity
 /**
  * @author Vassa
- * Version 1.1
+ * Version 1.2
  * 06.07.2023
  * */
 @Dao
@@ -23,7 +23,7 @@ interface LangDao {
     suspend fun getLangDataEntity(id: Int): LangDataEntity
 
     @Query("DELETE FROM lang WHERE id = :id")
-    suspend fun deleteLangDataEntityById(id: Long)
+    suspend fun deleteLangDataEntityById(id: Int)
 
     @Update(entity = LangDataEntity::class)
     suspend fun updateLangDataEntity(langDataEntity: LangDataEntity)

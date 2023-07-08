@@ -7,7 +7,7 @@ import androidx.room.Update
 import com.vassa.paintactivity.data.entity.pack.WordDataEntity
 /**
  * @author Vassa
- * Version 1.1
+ * Version 1.2
  * 06.07.2023
  * */
 @Dao
@@ -25,10 +25,10 @@ interface WordDao {
     suspend fun getWordDataEntityFromPack(packId: Int, langId: Int): WordDataEntity
 
     @Query("DELETE FROM word WHERE id = :id")
-    suspend fun deleteWordDataEntityById(id: Long)
+    suspend fun deleteWordDataEntityById(id: Int)
 
     @Query("DELETE FROM word WHERE pack_id = :packId")
-    suspend fun deleteWordDataEntityByIdPack(packId: Long)
+    suspend fun deleteWordDataEntityByIdPack(packId: Int)
 
     @Update(entity = WordDataEntity::class)
     suspend fun updateWordDataEntity(wordDataEntity: WordDataEntity)

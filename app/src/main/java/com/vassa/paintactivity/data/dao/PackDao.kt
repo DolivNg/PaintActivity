@@ -12,7 +12,7 @@ import com.vassa.paintactivity.data.entity.profiles.GlobalProfileDataEntity
 import com.vassa.paintactivity.data.entity.profiles.LocalProfileDataEntity
 /**
  * @author Vassa
- * Version 1.1
+ * Version 1.2
  * 06.07.2023
  * */
 @Dao
@@ -28,7 +28,7 @@ interface PackDao {
     suspend fun getPackDataEntity(id: Int): PackDataEntity
 
     @Query("DELETE FROM pack WHERE id = :id")
-    suspend fun deletePackDataEntityById(id: Long)
+    suspend fun deletePackDataEntityById(id: Int)
 
     @Update(entity = PackDataEntity::class)
     suspend fun updatePackDataEntity(packDataEntity: PackDataEntity)
