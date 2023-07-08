@@ -11,7 +11,7 @@ import com.vassa.paintactivity.domain.entity.profile.LocalProfileDomEntity
 /**
  * @author Vassa
  * 03.07.2023
- * version code = 1.1
+ * version code = 1.2
  * */
 interface DataBaseRepository {
 
@@ -64,7 +64,7 @@ interface DataBaseRepository {
 
     suspend fun loadLocalProfile(id: Int): LocalProfileDomEntity
 
-    suspend fun loadLocalProfilesAll(id: Int): ArrayList<LocalProfileDomEntity>
+    suspend fun loadLocalProfilesAll(): ArrayList<LocalProfileDomEntity>
     suspend fun insertLocalProfile(localProfileDomEntity: LocalProfileDomEntity)
 
     suspend fun deleteLocalProfile(localProfileDomEntity: LocalProfileDomEntity)

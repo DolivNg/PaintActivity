@@ -13,10 +13,14 @@ import com.vassa.paintactivity.ui.fragments.typegame.viewmodel.TypeGameMenuViewM
 
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-
+/**
+ *@author Vassa
+ * version 1.1
+ * 08.07.2023
+ * */
 val appModule = module {
     viewModel<MainMenuViewModel> {
-        MainMenuViewModel()
+        MainMenuViewModel(get())
     }
 
     viewModel<AchivmentViewModel> {

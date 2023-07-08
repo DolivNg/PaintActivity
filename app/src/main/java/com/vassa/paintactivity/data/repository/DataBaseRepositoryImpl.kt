@@ -149,7 +149,7 @@ class DataBaseRepositoryImpl(context: Context, var db: DataBaseApp) : DataBaseRe
         return LocalProfileConvertor.localProfileDataDomToConvertor(db.getLocalProfileDao().getLocalProfileDataEntity(id))//.localProfileDataToDomConvertor(db.getLocalProfileDao().getAllGlobalProfileDataEntity() as ArrayList<LocalProfileDataEntity>)
     }
 
-    override suspend fun loadLocalProfilesAll(id: Int): ArrayList<LocalProfileDomEntity> {
+    override suspend fun loadLocalProfilesAll(): ArrayList<LocalProfileDomEntity> {
         return LocalProfileConvertor.localProfileDataToDomListConvertor(db.getLocalProfileDao().getAllLocalProfileDataEntity() as ArrayList<LocalProfileDataEntity>)
     }
 
