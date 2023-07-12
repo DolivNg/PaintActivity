@@ -19,10 +19,10 @@ interface LangDao {
     @Query("SELECT * FROM lang")
     suspend fun getAllLangDataEntity(): List<LangDataEntity>
 
-    @Query("SELECT * FROM lang WHERE id = :id")
+    @Query("SELECT * FROM lang WHERE _id = :id")
     suspend fun getLangDataEntity(id: Int): LangDataEntity
 
-    @Query("DELETE FROM lang WHERE id = :id")
+    @Query("DELETE FROM lang WHERE _id = :id")
     suspend fun deleteLangDataEntityById(id: Int)
 
     @Update(entity = LangDataEntity::class)

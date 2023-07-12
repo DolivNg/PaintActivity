@@ -15,6 +15,7 @@ val domainModule = module {
     factory<GlobalProfileUseCase> {
         GlobalProfileUseCase(get())
     }
+
     factory<PackUseCase> {
         PackUseCase(get())
     }

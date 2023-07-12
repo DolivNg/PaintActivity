@@ -24,10 +24,10 @@ interface PackDao {
     @Query("SELECT * FROM pack")
     suspend fun getAllPackDataEntity(): List<PackDataEntity>
 
-    @Query("SELECT * FROM pack WHERE id = :id")
+    @Query("SELECT * FROM pack WHERE _id = :id")
     suspend fun getPackDataEntity(id: Int): PackDataEntity
 
-    @Query("DELETE FROM pack WHERE id = :id")
+    @Query("DELETE FROM pack WHERE _id = :id")
     suspend fun deletePackDataEntityById(id: Int)
 
     @Update(entity = PackDataEntity::class)

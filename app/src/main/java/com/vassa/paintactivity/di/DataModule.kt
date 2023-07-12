@@ -9,14 +9,14 @@ import com.vassa.paintactivity.domain.repositories.DataBaseRepository
 import org.koin.dsl.module
 /**
  * @author Vassa
- * Version 1.1
+ * Version 1.2
  * 06.07.2023
  * */
 val dataModule = module {
 
     fun provideDatabase(application: Application): DataBaseApp {
         return Room.databaseBuilder(application, DataBaseApp::class.java, "game.db")
-            .createFromAsset("database/questionDB.db")
+            .createFromAsset("database/paintDataBase.db")
             .build()
     }
 
@@ -24,12 +24,12 @@ val dataModule = module {
 //        return  database.countriesDao
 //    }
 
-    /*single { provideDatabase(get()) }
+    single { provideDatabase(get()) }
     //single { provideCountriesDao(get()) }
 
-*/
+
     single<DataBaseRepository>{
-        DataBaseRepositoryImpl(context = get(), db = get())
+        DataBaseRepositoryImpl(context = get(), get())
     }
 
 }

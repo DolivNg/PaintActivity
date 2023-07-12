@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.vassa.paintactivity"
-        minSdk 24
+        minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -49,16 +49,16 @@ dependencies {
     implementation ('io.socket:socket.io-client:2.0.0') {
         exclude group: 'org.json', module: 'json'
     }
-    implementation 'com.google.android.gms:play-services-ads:22.1.0'
-    implementation 'androidx.room:room-runtime:2.5.1'
+    implementation 'com.google.android.gms:play-services-ads:22.2.0'
+    implementation 'androidx.room:room-runtime:2.4.3'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'// Библиотека "Room"
-    kapt "androidx.room:room-compiler:2.5.1" // Кодогенератор
-    implementation 'androidx.room:room-ktx:2.5.1'
+    kapt "androidx.room:room-compiler:2.4.3" // Кодогенератор
+    implementation 'androidx.room:room-ktx:2.4.3'
 
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'

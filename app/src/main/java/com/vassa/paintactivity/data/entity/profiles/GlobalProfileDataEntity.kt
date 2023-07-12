@@ -6,17 +6,17 @@ import androidx.room.PrimaryKey
 /**
  * @author Vassa
  * 03.07.2023
- * version code = 1
+ * version code = 1.1
  * */
 @Entity(tableName = "global_profile")
 data class GlobalProfileDataEntity(
     @PrimaryKey
-    var id: Int,
-    var name: String,
-    var premium: Boolean,
-    @ColumnInfo(name = "time_premium") var timePremium: Boolean,
-    @ColumnInfo(name ="imposter") var imposterCount: Int,
-    var avatar: Int,
-    var color: Int,
-    var wins: Int
+    @ColumnInfo(name = "_id") var id: Int,
+    @ColumnInfo(name = "name") var name: String,
+    @ColumnInfo(name = "premium") var premium: Int,
+    @ColumnInfo(name = "time_premium") var timePremium: Int,
+    @ColumnInfo(name = "imposter") var imposterCount: Int,
+    @ColumnInfo(name = "avatar") var avatar: Int,
+    @ColumnInfo(name = "color") var color: Int,
+    @ColumnInfo(name = "wins")var wins: Int
 )

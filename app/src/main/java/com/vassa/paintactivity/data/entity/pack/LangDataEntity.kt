@@ -7,11 +7,12 @@ import androidx.room.PrimaryKey
 /**
  * @author Vassa
  * 03.07.2023
- * version code = 1
+ * version code = 1.1
  * */
-@Entity("lang")
+@Entity(tableName = "lang")
 data class LangDataEntity(
-    @PrimaryKey var id: Int,
-    @ColumnInfo(name = "name") var name: String
+    @PrimaryKey
+    @ColumnInfo(name = "_id") var id: Int,
+    @ColumnInfo(name = "name") var name: String,
 ) {
 }

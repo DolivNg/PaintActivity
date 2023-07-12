@@ -135,7 +135,7 @@ class DataBaseRepositoryImpl(context: Context, var db: DataBaseApp) : DataBaseRe
     }
 
     override suspend fun loadGlobalProfile(): GlobalProfileDomEntity {
-        return GlobalProfileConvertor.globalProfileDataDomToConvertor( db.getGlobalProfileDao().getGlobalProfileDataEntity(0))
+        return GlobalProfileConvertor.globalProfileDataDomToConvertor( db.getGlobalProfileDao().getGlobalProfileDataEntity(1))
     }
 
     override suspend fun updateGlobalProfile(

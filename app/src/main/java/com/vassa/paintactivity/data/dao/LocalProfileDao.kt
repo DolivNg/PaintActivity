@@ -20,10 +20,10 @@ interface LocalProfileDao {
     @Query("SELECT * FROM local_profile")
     suspend fun getAllLocalProfileDataEntity(): List<LocalProfileDataEntity>
 
-    @Query("SELECT * FROM local_profile WHERE id = :id")
+    @Query("SELECT * FROM local_profile WHERE _id = :id")
     suspend fun getLocalProfileDataEntity(id: Int): LocalProfileDataEntity
 
-    @Query("DELETE FROM local_profile WHERE id = :id")
+    @Query("DELETE FROM local_profile WHERE _id = :id")
     suspend fun deleteLocalProfileDataEntityById(id: Int)
 
     @Delete(entity = LocalProfileDataEntity::class)

@@ -3,16 +3,18 @@ package com.vassa.paintactivity.data.entity.pack
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.math.BigInteger
+
 /**
  * @author Vassa
  * 03.07.2023
- * version code = 1
+ * version code = 1.1
  * */
 @Entity(tableName = "pack")
 data class PackDataEntity(
     @PrimaryKey(autoGenerate = true)
-    var id: Int,
-    @ColumnInfo(name = "name") var name: String,
+    @ColumnInfo(name = "_id")var id: Int,
+    @ColumnInfo(name = "pack_name") var name: String,
     @ColumnInfo(name = "version") var version: Int,
-    @ColumnInfo(name = "standard") var standard: Boolean
+    @ColumnInfo(name = "standard") var standard: Int
 )

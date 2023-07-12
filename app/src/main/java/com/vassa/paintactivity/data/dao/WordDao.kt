@@ -24,7 +24,7 @@ interface WordDao {
     @Query("SELECT * FROM word WHERE pack_id = :packId AND lang_id= :langId")
     suspend fun getWordDataEntityFromPack(packId: Int, langId: Int): WordDataEntity
 
-    @Query("DELETE FROM word WHERE id = :id")
+    @Query("DELETE FROM word WHERE _id = :id")
     suspend fun deleteWordDataEntityById(id: Int)
 
     @Query("DELETE FROM word WHERE pack_id = :packId")

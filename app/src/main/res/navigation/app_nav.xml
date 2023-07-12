@@ -9,5 +9,86 @@
         android:id="@+id/mainMenuFragment"
         android:name="com.vassa.paintactivity.ui.fragments.menu.MainMenuFragment"
         android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" />
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_typeGameMenuFragment"
+            app:destination="@id/typeGameMenuFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_achivmentFragment"
+            app:destination="@id/achivmentFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_optionFragment"
+            app:destination="@id/optionFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_makePenFragment"
+            app:destination="@id/makePenFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_ruleFragment"
+            app:destination="@id/ruleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/achivmentFragment"
+        android:name="com.vassa.paintactivity.ui.fragments.achivmets.AchivmentFragment"
+        android:label="fragment_achivment"
+        tools:layout="@layout/fragment_achivment" />
+    <fragment
+        android:id="@+id/localGameFragment"
+        android:name="com.vassa.paintactivity.ui.fragments.local.LocalGameFragment"
+        android:label="fragment_local_game"
+        tools:layout="@layout/fragment_local_game" />
+    <fragment
+        android:id="@+id/makePenFragment"
+        android:name="com.vassa.paintactivity.ui.fragments.makepen.MakePenFragment"
+        android:label="fragment_make_pen"
+        tools:layout="@layout/fragment_make_pen" />
+    <fragment
+        android:id="@+id/ruleFragment"
+        android:name="com.vassa.paintactivity.ui.fragments.rules.RuleFragment"
+        android:label="RuleFragment" />
+    <fragment
+        android:id="@+id/multiplayerCreateFragment"
+        android:name="com.vassa.paintactivity.ui.fragments.multyplayer.create.MultiplayerCreateFragment"
+        android:label="fragment_multiplayer_create"
+        tools:layout="@layout/fragment_multiplayer_create" >
+        <action
+            android:id="@+id/action_multiplayerCreateFragment_to_multiplayerLobbyFragment"
+            app:destination="@id/multiplayerLobbyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiplayerLobbyFragment"
+        android:name="com.vassa.paintactivity.ui.fragments.multyplayer.lobby.MultiplayerLobbyFragment"
+        android:label="fragment_multiplayer_lobby"
+        tools:layout="@layout/fragment_multiplayer_lobby" />
+    <fragment
+        android:id="@+id/optionFragment"
+        android:name="com.vassa.paintactivity.ui.fragments.option.OptionFragment"
+        android:label="fragment_option"
+        tools:layout="@layout/fragment_option" />
+    <fragment
+        android:id="@+id/partyGameFragment"
+        android:name="com.vassa.paintactivity.ui.fragments.party.PartyGameFragment"
+        android:label="fragment_party_game"
+        tools:layout="@layout/fragment_party_game" />
+    <fragment
+        android:id="@+id/typeGameMenuFragment"
+        android:name="com.vassa.paintactivity.ui.fragments.typegame.TypeGameMenuFragment"
+        android:label="fragment_type_game_menu"
+        tools:layout="@layout/fragment_type_game_menu" >
+        <action
+            android:id="@+id/action_typeGameMenuFragment_to_ruleFragment"
+            app:destination="@id/ruleFragment" />
+        <action
+            android:id="@+id/action_typeGameMenuFragment_to_achivmentFragment"
+            app:destination="@id/achivmentFragment" />
+        <action
+            android:id="@+id/action_typeGameMenuFragment_to_multiplayerCreateFragment"
+            app:destination="@id/multiplayerCreateFragment" />
+        <action
+            android:id="@+id/action_typeGameMenuFragment_to_partyGameFragment"
+            app:destination="@id/partyGameFragment" />
+        <action
+            android:id="@+id/action_typeGameMenuFragment_to_localGameFragment"
+            app:destination="@id/localGameFragment" />
+    </fragment>
 </navigation>

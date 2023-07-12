@@ -19,10 +19,10 @@ interface GlobalProfileDao {
     @Query("SELECT * FROM global_profile")
     suspend fun getAllGlobalProfileDataEntity(): List<GlobalProfileDataEntity>
 
-    @Query("SELECT * FROM global_profile WHERE id = :id")
+    @Query("SELECT * FROM global_profile WHERE _id = :id")
     suspend fun getGlobalProfileDataEntity(id: Int): GlobalProfileDataEntity
 
-    @Query("DELETE FROM global_profile WHERE id = :id")
+    @Query("DELETE FROM global_profile WHERE _id = :id")
     suspend fun deleteGlobalProfileDataEntityById(id: Long)
 
     @Delete(entity = GlobalProfileDataEntity::class)
