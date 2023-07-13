@@ -4,7 +4,7 @@ import com.vassa.paintactivity.domain.entity.pack.WordDomEntity
 import com.vassa.paintactivity.domain.repositories.DataBaseRepository
 /**
  *@author Vassa
- * version 1.0
+ * version 1.1
  * 08.07.2023
  * */
 class WordUseCase(var repository: DataBaseRepository) {
@@ -21,6 +21,11 @@ class WordUseCase(var repository: DataBaseRepository) {
     suspend fun insertWord(word : WordDomEntity)
     {
         return repository.insertWord(word)
+    }
+
+    suspend fun deleteWord(word : WordDomEntity)
+    {
+        repository.deleteWord(word.id)
     }
 
     suspend fun insertWordList(word : ArrayList<WordDomEntity>)
