@@ -8,14 +8,9 @@
         android:id="@+id/tVName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:gravity="center"
         android:text="TextView"
         android:textSize="20sp" />
-
-    <View
-        android:id="@+id/board4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/board" />
 
 </LinearLayout>
