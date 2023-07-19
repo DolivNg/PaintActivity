@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/board"
     tools:context=".ui.fragments.option.OptionFragment">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:padding="6dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,23 +37,16 @@
 
                 <ImageView
                     android:id="@+id/imVProfileAvatar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_weight="0"
                     android:src="@drawable/ic_launcher_foreground" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0"
+                    android:layout_weight="1"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tVChAvat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/tv_avatar" />
 
                     <TextView
                         android:id="@+id/tVBuyPrem"
@@ -73,17 +67,44 @@
                             android:text="@string/tv_profile_name" />
 
                         <EditText
-                            android:id="@+id/edTProfileName"
+                            android:id="@+id/edTGlobalProfileName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:gravity="center"
                             android:hint="Name"
+
+                            android:imeOptions="actionDone"
                             android:inputType="text"
                             android:text="Name" />
                     </LinearLayout>
                 </LinearLayout>
 
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imVGlobalProfileColor"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:background="#123EDD"
+                    android:src="@drawable/board" />
+
+                <TextView
+                    android:id="@+id/tVChangeColorLoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingLeft="2dp"
+                    android:text="@string/change_color" />
             </LinearLayout>
 
             <View
@@ -102,13 +123,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/imVLocalProfile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/ic_launcher_foreground" />
 
                 <LinearLayout
@@ -145,7 +166,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="40dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -156,16 +177,44 @@
                             android:text="@string/tv_rename" />
 
                         <EditText
-                            android:id="@+id/edTNameProfile"
+                            android:id="@+id/edTLocalProfileName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
+                            android:gravity="center"
+                            android:hint="Name"
+
+                            android:imeOptions="actionDone"
                             android:inputType="text"
-                            android:text="Name" />
+                            android:text="Name"/>
                     </LinearLayout>
 
                 </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imVLocalProfileColor"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:background="#123EDD"
+                    android:src="@drawable/board" />
+
+                <TextView
+                    android:id="@+id/tVChangeColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingLeft="2dp"
+                    android:text="@string/change_color" />
             </LinearLayout>
 
             <View
@@ -250,7 +299,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleVPackWord"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="150dp"
+                app:layout_constraintEnd_toEndOf="parent">
 
 
             </androidx.recyclerview.widget.RecyclerView>
@@ -262,6 +312,7 @@
                 android:text="@string/bttn_add" />
         </LinearLayout>
     </ScrollView>
+
 
     <Button
         android:id="@+id/button"
