@@ -15,7 +15,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 /**
  *@author Vassa
- * version 1.1
+ * version 1.2
  * 08.07.2023
  * */
 val appModule = module {
@@ -44,7 +44,7 @@ val appModule = module {
     }
 
     viewModel<OptionViewModel> {
-        OptionViewModel()
+        OptionViewModel(get(),get(),get(),get())
     }
 
     viewModel<PartyGameViewModel> {

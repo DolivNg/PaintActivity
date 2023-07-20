@@ -79,6 +79,10 @@ class OptionViewModel(
         }
     }
 
+    fun updateWord(){
+
+    }
+
     fun insertWord(word: WordDomEntity) {
         viewModelScope.launch {
             withContext(Dispatchers.Main) {
@@ -90,7 +94,7 @@ class OptionViewModel(
     }
 
     //localPlayer
-    suspend fun localProfileLoad() {
+    fun loadLocalProfile() {
         viewModelScope.launch {
             withContext(Dispatchers.Main) {
                 localProfileList.value = localProfileUseCase.loadProfilesAll()
@@ -98,7 +102,7 @@ class OptionViewModel(
         }
     }
 
-    suspend fun localProfileInsert(localProfile: LocalProfileDomEntity){
+    fun insertLocalProfile(localProfile: LocalProfileDomEntity) {
         viewModelScope.launch {
             withContext(Dispatchers.Main) {
                 localProfileUseCase.insertProfile(localProfile)
@@ -108,7 +112,7 @@ class OptionViewModel(
         }
     }
 
-    suspend fun localProfileDelete(localProfile: LocalProfileDomEntity){
+    fun deleteLocalProfile(localProfile: LocalProfileDomEntity) {
         viewModelScope.launch {
             withContext(Dispatchers.Main) {
                 localProfileUseCase.deleteProfile(localProfile)
@@ -118,12 +122,31 @@ class OptionViewModel(
         }
     }
 
-    suspend fun localProfileUpdate(localProfile: LocalProfileDomEntity){
+    fun updateLocalProfile(localProfile: LocalProfileDomEntity) {
         viewModelScope.launch {
             withContext(Dispatchers.Main) {
                 localProfileUseCase.updateProfile(localProfile)
 
                 localProfileList.value = localProfileUseCase.loadProfilesAll()
+            }
+        }
+    }
+    //GlobalProfile
+    fun loadGlobalProfile() {
+
+        viewModelScope.launch {
+            withContext(Dispatchers.Main) {
+                globalProfile.value = globalProfileUseCase.loadProfile()
+            }
+        }
+    }
+
+    fun updateGlobalProfile(globalProfileDomEntity: GlobalProfileDomEntity){
+        viewModelScope.launch {
+            withContext(Dispatchers.Main) {
+                globalProfileUseCase.updateProfile(globalProfileDomEntity)
+
+                globalProfile.value = globalProfileUseCase.loadProfile()
             }
         }
     }

@@ -11,13 +11,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainMenuViewModel(var globalProfileUseCase: GlobalProfileUseCase) : ViewModel() {
-    private  var globalProfile = MutableLiveData<GlobalProfileDomEntity>()
+class MainMenuViewModel(private var globalProfileUseCase: GlobalProfileUseCase) : ViewModel() {
+    private var globalProfile = MutableLiveData<GlobalProfileDomEntity>()
 
-    fun getGlobalProfile() : LiveData<GlobalProfileDomEntity> {
+    fun getGlobalProfile(): LiveData<GlobalProfileDomEntity> {
         return globalProfile
     }
-     fun loadGlobalProfile(){
+
+    fun loadGlobalProfile() {
         viewModelScope.launch {
             withContext(Dispatchers.Main) {
                 globalProfile.value = globalProfileUseCase.loadProfile()

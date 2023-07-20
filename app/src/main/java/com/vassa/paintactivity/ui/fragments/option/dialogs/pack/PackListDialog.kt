@@ -40,8 +40,6 @@ class PackListDialog(var fragment : FragmentDialogCallBack) : DialogFragment(),
 
     fun changeList(list: ArrayList<FullPackDomEntity>) {
         adapter.setList(list)
-        adapter.notifyDataSetChanged();
-
     }
 
     override fun onCancel(dialog: DialogInterface) {
