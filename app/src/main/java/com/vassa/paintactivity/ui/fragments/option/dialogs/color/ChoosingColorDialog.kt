@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
 import com.vassa.paintactivity.databinding.LayoutSelectAvatarBinding
 import com.vassa.paintactivity.ui.constants.VectorAssets
 
@@ -18,19 +19,7 @@ class ChoosingColorDialog(var chooser : ChooseColorCallBack) : DialogFragment() 
     private val binding get() = _binding!!
     private var columns = 4
     private var row = VectorAssets.vectors.size / columns + 1
-    private var dataColor = ArrayList<Int>()
-
-    init {
-        dataColor.add(Color.BLUE)
-        dataColor.add(Color.YELLOW)
-        dataColor.add(Color.GRAY)
-        dataColor.add(Color.GREEN)
-        dataColor.add(Color.RED)
-        dataColor.add(Color.DKGRAY)
-        dataColor.add(Color.CYAN)
-        dataColor.add(Color.WHITE)
-        dataColor.add(Color.MAGENTA)
-    }
+    private var tag = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,6 +30,10 @@ class ChoosingColorDialog(var chooser : ChooseColorCallBack) : DialogFragment() 
         return binding.root
     }
 
+    override fun show(manager: FragmentManager, tag: String?) {
+        super.show(manager, tag)
+        this.tag = tag!!
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -55,18 +48,18 @@ class ChoosingColorDialog(var chooser : ChooseColorCallBack) : DialogFragment() 
             rowCount = row
         }
 
-        for (i in 0 until dataColor.size) {
+        for (i in 0 until VectorAssets.colors.size) {
             val im = ImageView(context)
             im.apply {
                 id = i
                 maxWidth = widthOfCell
                 maxHeight = widthOfCell
                 layoutParams = ViewGroup.LayoutParams(widthOfCell, widthOfCell)
-                setBackgroundColor(dataColor[i])
+                setBackgroundColor(VectorAssets.colors[i])
 
             }
             im.setOnClickListener {
-                    chooser.colorChoose(dataColor[im.id])
+                    chooser.colorChoose(VectorAssets.colors[im.id],tag)
                     dismiss()
             }
             binding.grLAvatar.addView(im)
@@ -78,6 +71,6 @@ class ChoosingColorDialog(var chooser : ChooseColorCallBack) : DialogFragment() 
     }
 
     interface ChooseColorCallBack {
-        fun colorChoose(id : Int)
+        fun colorChoose(id : Int,tag: String)
     }
 }

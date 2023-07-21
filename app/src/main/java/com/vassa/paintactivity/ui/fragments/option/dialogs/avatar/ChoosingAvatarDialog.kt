@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
 import com.vassa.paintactivity.databinding.DialogListTextBinding
 import com.vassa.paintactivity.databinding.LayoutSelectAvatarBinding
 import com.vassa.paintactivity.domain.entity.avatar.AvatarDomEntity
@@ -19,11 +20,17 @@ class ChoosingAvatarDialog(val chooser : ChooseAvatarCallBack) : DialogFragment(
     private var columns = 4
     private var row = VectorAssets.vectors.size / columns + 1
     private var dataAvatar = ArrayList<AvatarDomEntity>()
+    private var tag = ""
 
     //TODO TEST
     init {
         for (i in 0 until VectorAssets.vectors.size)
             dataAvatar.add(AvatarDomEntity(i,i<5))
+    }
+
+    override fun show(manager: FragmentManager, tag: String?) {
+        super.show(manager, tag)
+        this.tag = tag!!
     }
 
     override fun onCreateView(
@@ -64,7 +71,7 @@ class ChoosingAvatarDialog(val chooser : ChooseAvatarCallBack) : DialogFragment(
             }
             im.setOnClickListener {
                 if (dataAvatar[im.id].open){
-                    chooser.avatarChoose(im.id)
+                    chooser.avatarChoose(im.id,tag)
                     dismiss()
                 }
             }
@@ -77,7 +84,7 @@ class ChoosingAvatarDialog(val chooser : ChooseAvatarCallBack) : DialogFragment(
     }
 
     interface ChooseAvatarCallBack {
-        fun avatarChoose(id : Int)
+        fun avatarChoose(id : Int,tag : String)
 
     }
 }
