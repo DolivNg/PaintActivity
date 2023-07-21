@@ -27,7 +27,7 @@ import androidx.room.PrimaryKey
     ]
 )
 data class WordDataEntity(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "_id") var id: Int,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "_id") var id: Int = 0,
     @ColumnInfo(name = "pack_id") var packId: Int,
     @ColumnInfo(name = "lang_id") var langId: Int,
     @ColumnInfo(name = "word") var word: String,

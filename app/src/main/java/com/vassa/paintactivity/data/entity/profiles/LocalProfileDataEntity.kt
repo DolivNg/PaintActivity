@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "local_profile")
 data class LocalProfileDataEntity(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "_id") var id : Int,
+    @ColumnInfo(name = "_id") var id : Int = 0,
     @ColumnInfo(name = "name") var name : String,
     @ColumnInfo(name = "avatar") var avatar : Int,
     @ColumnInfo(name = "color") var color : Int,

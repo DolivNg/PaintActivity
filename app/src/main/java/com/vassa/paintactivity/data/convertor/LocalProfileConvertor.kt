@@ -12,12 +12,11 @@ class LocalProfileConvertor {
     companion object {
         fun localProfileDomToDataConvertor(localProfileDomEntity: LocalProfileDomEntity): LocalProfileDataEntity {
             return LocalProfileDataEntity(
-                localProfileDomEntity.id,
-                localProfileDomEntity.name,
-                localProfileDomEntity.avatar,
-                localProfileDomEntity.color,
-                localProfileDomEntity.imposter,
-                localProfileDomEntity.wins
+                name = localProfileDomEntity.name,
+                avatar = localProfileDomEntity.avatar,
+                color = localProfileDomEntity.color,
+                imposter = localProfileDomEntity.imposter,
+                wins = localProfileDomEntity.wins
             )
         }
 

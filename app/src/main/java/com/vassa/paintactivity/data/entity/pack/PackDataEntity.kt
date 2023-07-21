@@ -13,7 +13,7 @@ import java.math.BigInteger
 @Entity(tableName = "pack")
 data class PackDataEntity(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "_id")var id: Int,
+    @ColumnInfo(name = "_id")var id: Int = 0,
     @ColumnInfo(name = "pack_name") var name: String,
     @ColumnInfo(name = "version") var version: Int,
     @ColumnInfo(name = "standard") var standard: Int

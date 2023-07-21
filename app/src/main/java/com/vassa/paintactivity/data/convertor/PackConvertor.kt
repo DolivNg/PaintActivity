@@ -11,10 +11,10 @@ class PackConvertor {
     companion object {
         fun packDomToDataConvertor(packDomEntity: PackDomEntity): PackDataEntity {
             return PackDataEntity(
-                packDomEntity.id,
-                packDomEntity.name,
-                packDomEntity.version,
-                packDomEntity.standard
+
+                name = packDomEntity.name,
+                version = packDomEntity.version,
+                standard =  packDomEntity.standard
             )
         }
 

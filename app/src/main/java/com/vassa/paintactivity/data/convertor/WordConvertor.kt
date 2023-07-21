@@ -12,10 +12,9 @@ class WordConvertor {
     companion object {
         fun wordDomToDataConvertor(wordDomEntity: WordDomEntity): WordDataEntity {
             return WordDataEntity(
-                wordDomEntity.id,
-                wordDomEntity.packId,
-                wordDomEntity.langId,
-                wordDomEntity.word
+                packId = wordDomEntity.packId,
+                langId = wordDomEntity.langId,
+                word = wordDomEntity.word
             )
         }
 
