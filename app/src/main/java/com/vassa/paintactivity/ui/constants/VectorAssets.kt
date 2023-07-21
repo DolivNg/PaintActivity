@@ -1,5 +1,6 @@
 package com.vassa.paintactivity.ui.constants
 
+import android.graphics.Color
 import com.vassa.paintactivity.R
 
 class VectorAssets {
@@ -14,6 +15,18 @@ class VectorAssets {
             R.drawable.ic_test_7,
             R.drawable.ic_test_8
         )
+        val colors = intArrayOf(
+            Color.BLUE,
+            Color.YELLOW,
+            Color.GRAY,
+            Color.GREEN,
+            Color.RED,
+            Color.DKGRAY,
+            Color.CYAN,
+            Color.WHITE,
+            Color.MAGENTA
+        )
         const val close = R.drawable.ic_close
     }
+
 }
