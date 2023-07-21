@@ -13,8 +13,8 @@ import com.vassa.paintactivity.domain.entity.pack.FullPackDomEntity
 import com.vassa.paintactivity.ui.fragments.option.dialogs.pack.adapter.PackListAdapter
 
 
-class PackListDialog(var fragment : FragmentDialogCallBack) : DialogFragment(),
-    PackListAdapter.AdapterCallBack {
+class PackListDialog(var fragment : PackFragmentDialogCallBack) : DialogFragment(),
+    PackListAdapter.PackAdapterCallBack {
 
     private var _binding: DialogListTextBinding? = null
     private val binding get() = _binding!!
@@ -42,17 +42,8 @@ class PackListDialog(var fragment : FragmentDialogCallBack) : DialogFragment(),
         adapter.setList(list)
     }
 
-    override fun onCancel(dialog: DialogInterface) {
-        super.onCancel(dialog)
-        Log.d("vasa", "Dialog 1: onCancel");
-    }
 
-    override fun onDismiss(dialog: DialogInterface) {
-        super.onDismiss(dialog)
-        Log.d("vasa", "Dialog 1: dismise");
-    }
-
-    interface FragmentDialogCallBack {
+    interface PackFragmentDialogCallBack {
         fun fragmentDialog(pack: FullPackDomEntity)
     }
 

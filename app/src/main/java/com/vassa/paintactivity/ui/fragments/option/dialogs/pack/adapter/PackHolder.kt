@@ -8,7 +8,7 @@ import com.vassa.paintactivity.domain.entity.pack.FullPackDomEntity
 class PackHolder(
     itemView: View,
     var binding: LayoutTextListElementBinding,
-    var holderCallBack: HolderCallBack
+    var holderCallBack: PackHolderCallBack
 ) :
     RecyclerView.ViewHolder(itemView) {
 
@@ -25,7 +25,7 @@ class PackHolder(
         binding.tVName.text = pack.name
     }
 
-    interface HolderCallBack {
+    interface PackHolderCallBack {
         fun holderCallBack(pack: FullPackDomEntity)
     }
 }

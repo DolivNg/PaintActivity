@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vassa.paintactivity.databinding.LayoutTextListElementBinding
 import com.vassa.paintactivity.domain.entity.pack.FullPackDomEntity
 
-class PackListAdapter(private var adapterCallBack: AdapterCallBack) :
+class PackListAdapter(private var adapterCallBack: PackAdapterCallBack) :
     RecyclerView.Adapter<PackHolder>(),
-    PackHolder.HolderCallBack {
+    PackHolder.PackHolderCallBack {
+
     private var packListHolders: ArrayList<PackHolder> = ArrayList()
     private var fullPackDomEntityList: ArrayList<FullPackDomEntity> = ArrayList()
-
 
     fun setList(list: ArrayList<FullPackDomEntity>) {
         fullPackDomEntityList = list
@@ -35,7 +35,7 @@ class PackListAdapter(private var adapterCallBack: AdapterCallBack) :
         holder.bind(fullPackDomEntityList[position])
     }
 
-    interface AdapterCallBack {
+    interface PackAdapterCallBack {
         fun adapterCallBack(pack: FullPackDomEntity)
     }
 
