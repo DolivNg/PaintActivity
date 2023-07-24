@@ -56,7 +56,7 @@ val appModule = module {
     }
 
     viewModel<TypeGameMenuViewModel> {
-        TypeGameMenuViewModel()
+        TypeGameMenuViewModel(get())
     }
 
 }
