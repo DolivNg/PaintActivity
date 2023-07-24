@@ -1,24 +1,20 @@
-package com.vassa.paintactivity.ui.fragments.option.dialogs.pack
+package com.vassa.paintactivity.ui.dialogs.localprofile
 
-import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vassa.paintactivity.databinding.DialogListTextBinding
-import com.vassa.paintactivity.domain.entity.pack.FullPackDomEntity
-import com.vassa.paintactivity.ui.fragments.option.dialogs.pack.adapter.PackListAdapter
+import com.vassa.paintactivity.domain.entity.profile.LocalProfileDomEntity
+import com.vassa.paintactivity.ui.dialogs.localprofile.adapters.LocalProfileAdapters
 
-
-class PackListDialog(var fragment : PackFragmentDialogCallBack) : DialogFragment(),
-    PackListAdapter.PackAdapterCallBack {
-
+class LocalProfileDialog(var localCallBack: LocalFragmentDialogCallBack) : DialogFragment(),
+    LocalProfileAdapters.LocalProfAdapterCallback {
     private var _binding: DialogListTextBinding? = null
     private val binding get() = _binding!!
-    private val adapter: PackListAdapter = PackListAdapter(this)
+    private var adapter : LocalProfileAdapters = LocalProfileAdapters(this)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,17 +34,19 @@ class PackListDialog(var fragment : PackFragmentDialogCallBack) : DialogFragment
         binding.bttnCencelDialog.setOnClickListener { dismiss() }
     }
 
-    fun changeList(list: ArrayList<FullPackDomEntity>) {
+    fun changeList(list: ArrayList<LocalProfileDomEntity>) {
         adapter.setList(list)
     }
 
 
-    interface PackFragmentDialogCallBack {
-        fun fragmentDialog(pack: FullPackDomEntity)
+    interface LocalFragmentDialogCallBack {
+        fun localFragmentDialog(local: LocalProfileDomEntity)
     }
 
-    override fun adapterCallBack(pack: FullPackDomEntity) {
-        fragment.fragmentDialog(pack)
+    override fun localProfileAdapterCallBack(local: LocalProfileDomEntity) {
+        localCallBack.localFragmentDialog(local)
         dismiss()
     }
+
+
 }

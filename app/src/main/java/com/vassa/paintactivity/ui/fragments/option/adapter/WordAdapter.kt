@@ -1,16 +1,13 @@
-package com.vassa.paintactivity.ui.fragments.option
+package com.vassa.paintactivity.ui.fragments.option.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.vassa.paintactivity.databinding.LayoutTextListElementBinding
 import com.vassa.paintactivity.databinding.LayoutWordListElementBinding
-import com.vassa.paintactivity.domain.entity.pack.FullPackDomEntity
 import com.vassa.paintactivity.domain.entity.pack.WordDomEntity
-import com.vassa.paintactivity.ui.fragments.option.dialogs.pack.adapter.PackHolder
 
-class WordAdapter(var callBack : WordAdapterCallBack) : RecyclerView.Adapter<WordHolder>(),WordHolder.WordHolderCallBack {
+class WordAdapter(var callBack : WordAdapterCallBack) : RecyclerView.Adapter<WordHolder>(),
+    WordHolder.WordHolderCallBack {
 
     private var wordListHolders: ArrayList<WordHolder> = ArrayList()
     private var wordDomEntityList: ArrayList<WordDomEntity> = ArrayList()

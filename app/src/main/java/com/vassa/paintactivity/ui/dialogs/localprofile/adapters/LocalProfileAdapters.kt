@@ -1,4 +1,4 @@
-package com.vassa.paintactivity.ui.fragments.option.dialogs.localprofile.adapters
+package com.vassa.paintactivity.ui.dialogs.localprofile.adapters
 
 import android.content.Context
 import android.view.LayoutInflater

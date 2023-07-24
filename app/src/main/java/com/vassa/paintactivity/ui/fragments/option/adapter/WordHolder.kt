@@ -1,4 +1,4 @@
-package com.vassa.paintactivity.ui.fragments.option
+package com.vassa.paintactivity.ui.fragments.option.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

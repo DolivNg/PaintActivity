@@ -1,21 +1,15 @@
-package com.vassa.paintactivity.ui.fragments.option.dialogs
+package com.vassa.paintactivity.ui.dialogs.edittext
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.vassa.paintactivity.databinding.DialogEditTextBinding
-import com.vassa.paintactivity.databinding.LayoutSelectAvatarBinding
-import com.vassa.paintactivity.ui.constants.VectorAssets
 
 class EditTextDialog(var writer: EditTextDialogCallBack) : DialogFragment() {
 
