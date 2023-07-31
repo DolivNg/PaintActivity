@@ -1,7 +1,8 @@
-package com.vassa.paintactivity
+package com.vassa.paintactivity.ui.ativity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.vassa.paintactivity.R
 
 /***
  *@author vassa

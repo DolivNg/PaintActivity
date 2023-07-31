@@ -83,10 +83,10 @@
             </LinearLayout>
 
             <View
-
+                android:id="@+id/boardLocal1"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
-                android:background="@color/material_dynamic_neutral30" />
+                android:background="@drawable/board" />
 
             <TextView
                 android:id="@+id/tVPacksTopicLocal"
@@ -129,9 +129,10 @@
                 android:text="@string/sw_random_pack" />
 
             <View
+                android:id="@+id/boardLocal2"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
-                android:background="@color/material_dynamic_neutral30" />
+                android:background="@drawable/board" />
 
             <TextView
                 android:id="@+id/tVOtherSettingLocal"

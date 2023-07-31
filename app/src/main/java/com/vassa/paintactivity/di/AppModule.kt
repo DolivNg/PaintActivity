@@ -36,7 +36,7 @@ val appModule = module {
     }
 
     viewModel<MultiplayerCreateViewModel> {
-        MultiplayerCreateViewModel()
+        MultiplayerCreateViewModel(get(),get())
     }
 
     viewModel<MultiplayerLobbyViewModel> {
