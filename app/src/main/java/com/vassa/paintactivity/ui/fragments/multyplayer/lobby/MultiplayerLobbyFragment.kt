@@ -1,12 +1,15 @@
 package com.vassa.paintactivity.ui.fragments.multyplayer.lobby
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.vassa.paintactivity.R
+import io.socket.client.IO
+import io.socket.client.Socket
+
 
 class MultiplayerLobbyFragment : Fragment() {
 
@@ -25,7 +28,7 @@ class MultiplayerLobbyFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MultiplayerLobbyViewModel::class.java)
+        viewModel = ViewModelProvider(this)[MultiplayerLobbyViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

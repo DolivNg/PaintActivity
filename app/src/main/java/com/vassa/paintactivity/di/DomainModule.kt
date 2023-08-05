@@ -5,6 +5,7 @@ import com.vassa.paintactivity.domain.usecase.GlobalProfileUseCase
 import com.vassa.paintactivity.domain.usecase.LocalProfileUseCase
 import com.vassa.paintactivity.domain.usecase.PackUseCase
 import com.vassa.paintactivity.domain.usecase.WordUseCase
+import com.vassa.paintactivity.domain.usecase.socket.SocketUseCase
 import org.koin.dsl.module
 /**
  *@author Vassa
@@ -24,5 +25,8 @@ val domainModule = module {
     }
     factory<LocalProfileUseCase> {
         LocalProfileUseCase(get())
+    }
+    factory<SocketUseCase> {
+        SocketUseCase(get())
     }
 }

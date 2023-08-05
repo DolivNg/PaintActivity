@@ -23,17 +23,13 @@ class GameMultiplayerActivity : AppCompatActivity() {
         binding = ActivityGameMultiplayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_game_multiplayer)
+
+       /* val navController = findNavController(R.id.nav_host_fragment_content_game_multiplayer)
         appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        setupActionBarWithNavController(navController, appBarConfiguration)*/
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAnchorView(R.id.fab)
-                .setAction("Action", null).show()
-        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
