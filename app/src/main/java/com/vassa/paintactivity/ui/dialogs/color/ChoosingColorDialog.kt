@@ -10,7 +10,7 @@ import android.widget.ImageView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import com.vassa.paintactivity.databinding.LayoutSelectAvatarBinding
-import com.vassa.paintactivity.ui.constants.VectorAssets
+import com.vassa.paintactivity.data.constants.VectorAssets
 
 class ChoosingColorDialog(var chooser : ChooseColorCallBack) : DialogFragment() {
 

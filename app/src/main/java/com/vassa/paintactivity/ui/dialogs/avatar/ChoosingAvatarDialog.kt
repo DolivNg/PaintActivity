@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentManager
 import com.vassa.paintactivity.databinding.DialogListTextBinding
 import com.vassa.paintactivity.databinding.LayoutSelectAvatarBinding
 import com.vassa.paintactivity.domain.entity.avatar.AvatarDomEntity
-import com.vassa.paintactivity.ui.constants.VectorAssets
+import com.vassa.paintactivity.data.constants.VectorAssets
 
 class ChoosingAvatarDialog(val chooser : ChooseAvatarCallBack) : DialogFragment() {
 
