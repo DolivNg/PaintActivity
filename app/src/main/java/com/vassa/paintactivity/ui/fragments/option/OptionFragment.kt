@@ -15,7 +15,7 @@ import com.vassa.paintactivity.domain.entity.pack.PackDomEntity
 import com.vassa.paintactivity.domain.entity.pack.WordDomEntity
 import com.vassa.paintactivity.domain.entity.profile.GlobalProfileDomEntity
 import com.vassa.paintactivity.domain.entity.profile.LocalProfileDomEntity
-import com.vassa.paintactivity.ui.constants.VectorAssets
+import com.vassa.paintactivity.data.constants.VectorAssets
 import com.vassa.paintactivity.ui.dialogs.edittext.EditTextDialog
 import com.vassa.paintactivity.ui.dialogs.color.ChoosingColorDialog
 import com.vassa.paintactivity.ui.dialogs.avatar.ChoosingAvatarDialog
