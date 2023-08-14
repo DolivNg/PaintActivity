@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.vassa.paintactivity.databinding.LayoutProfileListElementBinding
 import com.vassa.paintactivity.domain.entity.profile.LocalProfileDomEntity
-import com.vassa.paintactivity.ui.constants.VectorAssets
+import com.vassa.paintactivity.data.constants.VectorAssets
 
 class LocalProfileHolder(
     itemView: View,

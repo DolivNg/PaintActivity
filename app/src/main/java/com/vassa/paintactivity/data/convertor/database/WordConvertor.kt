@@ -1,4 +1,4 @@
-package com.vassa.paintactivity.data.convertor
+package com.vassa.paintactivity.data.convertor.database
 
 import com.vassa.paintactivity.data.entity.pack.WordDataEntity
 import com.vassa.paintactivity.domain.entity.pack.WordDomEntity

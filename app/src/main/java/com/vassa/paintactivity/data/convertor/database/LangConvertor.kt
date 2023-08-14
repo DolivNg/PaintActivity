@@ -1,9 +1,8 @@
-package com.vassa.paintactivity.data.convertor
+package com.vassa.paintactivity.data.convertor.database
 
 import com.vassa.paintactivity.data.entity.pack.LangDataEntity
-import com.vassa.paintactivity.data.entity.pack.PackDataEntity
 import com.vassa.paintactivity.domain.entity.pack.LangDomEntity
-import com.vassa.paintactivity.domain.entity.pack.PackDomEntity
+
 /**
  * @author Vassa
  * Version 1.0
