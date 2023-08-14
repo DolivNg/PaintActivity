@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.vassa.paintactivity.R
 import com.vassa.paintactivity.databinding.FragmentMainMenuBinding
 import com.vassa.paintactivity.domain.entity.profile.GlobalProfileDomEntity
-import com.vassa.paintactivity.ui.constants.VectorAssets
+import com.vassa.paintactivity.data.constants.VectorAssets
 import com.vassa.paintactivity.ui.fragments.menu.viewmodel.MainMenuViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
