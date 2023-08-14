@@ -43,14 +43,14 @@ class GameMultiplayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.button3.setOnClickListener {
-            viewModel.connect()
+            //viewModel.connect()
             //mSocket.connect()
         }
         binding.button4.setOnClickListener {
-            viewModel.send()
+            //viewModel.send()
         }
         binding.button2.setOnClickListener {
-            viewModel.disconnect()
+            //viewModel.disconnect()
         }
 
         binding.game.setOnTouchListener { v, event ->

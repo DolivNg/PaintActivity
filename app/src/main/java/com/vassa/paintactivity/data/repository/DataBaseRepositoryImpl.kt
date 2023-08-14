@@ -2,11 +2,11 @@ package com.vassa.paintactivity.data.repository
 
 import android.content.Context
 import com.vassa.paintactivity.data.DataBaseApp
-import com.vassa.paintactivity.data.convertor.GlobalProfileConvertor
-import com.vassa.paintactivity.data.convertor.LangConvertor
-import com.vassa.paintactivity.data.convertor.LocalProfileConvertor
-import com.vassa.paintactivity.data.convertor.PackConvertor
-import com.vassa.paintactivity.data.convertor.WordConvertor
+import com.vassa.paintactivity.data.convertor.database.GlobalProfileConvertor
+import com.vassa.paintactivity.data.convertor.database.LangConvertor
+import com.vassa.paintactivity.data.convertor.database.LocalProfileConvertor
+import com.vassa.paintactivity.data.convertor.database.PackConvertor
+import com.vassa.paintactivity.data.convertor.database.WordConvertor
 import com.vassa.paintactivity.data.entity.pack.LangDataEntity
 import com.vassa.paintactivity.data.entity.pack.PackDataEntity
 import com.vassa.paintactivity.data.entity.pack.WordDataEntity
