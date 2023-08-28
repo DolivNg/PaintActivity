@@ -1,4 +1,4 @@
-package com.vassa.paintactivity.ui.constants
+package com.vassa.paintactivity.data.constants
 
 import android.graphics.Color
 import com.vassa.paintactivity.R

@@ -1,32 +1,31 @@
 package com.vassa.paintactivity.ui.fragments.multyplayer.create
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vassa.paintactivity.domain.entity.pack.FullPackDomEntity
-import com.vassa.paintactivity.domain.entity.pack.PackDomEntity
 import com.vassa.paintactivity.domain.entity.profile.GlobalProfileDomEntity
 import com.vassa.paintactivity.domain.usecase.GlobalProfileUseCase
 import com.vassa.paintactivity.domain.usecase.PackUseCase
-import com.vassa.paintactivity.ui.intents.GameOptionIntent
+import com.vassa.paintactivity.data.entity.intents.RoomOptionDataEntity
+import com.vassa.paintactivity.ui.intent.RoomOptionIntent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MultiplayerCreateViewModel(private var globalProfileUseCase: GlobalProfileUseCase, private var packUseCase: PackUseCase) : ViewModel() {
     private var globalProfile = MutableLiveData<GlobalProfileDomEntity>()
-    private val gameSetting = MutableLiveData<GameOptionIntent>()
+    private val gameSetting = MutableLiveData<RoomOptionIntent>()
     private var packList =  MutableLiveData<ArrayList<FullPackDomEntity>>()
     init {
-        gameSetting.value = GameOptionIntent()
+        gameSetting.value = RoomOptionIntent()
     }
 
     fun getPackList() : LiveData<ArrayList<FullPackDomEntity>> {
         return packList
     }
-    fun getGameSetting() : LiveData<GameOptionIntent>{
+    fun getGameSetting() : LiveData<RoomOptionIntent>{
         return gameSetting
     }
     fun getGlobalProfile(): LiveData<GlobalProfileDomEntity> {
@@ -42,9 +41,8 @@ class MultiplayerCreateViewModel(private var globalProfileUseCase: GlobalProfile
     }
 
     fun setGroup(str : String){
-        val temp = gameSetting.value!!
-        temp.group = str
-        gameSetting.value = temp
+
+        gameSetting.value = gameSetting.value!!.copy(group = str)
     }
 
     fun setPlayer(player : Int){

@@ -1,8 +1,6 @@
 package com.vassa.paintactivity.data.convertor.socket
 
 import com.vassa.paintactivity.data.entity.intents.RoomOptionDataEntity
-import com.vassa.paintactivity.data.entity.socket.InfoClientDataEntity
-import com.vassa.paintactivity.domain.entity.socket.InfoClientDomEntity
 import com.vassa.paintactivity.domain.entity.socket.RoomOptionDomEntity
 
 class RoomOptionDataConvertor {
@@ -23,7 +21,7 @@ class RoomOptionDataConvertor {
                 )
         }
 
-        fun roomOptionDataDomToConvertor(roomDataEntity: RoomOptionDataEntity): RoomOptionDomEntity {
+        fun roomOptionDataToDomConvertor(roomDataEntity: RoomOptionDataEntity): RoomOptionDomEntity {
             return RoomOptionDomEntity(
                 roomDataEntity.playerCount,
                 roomDataEntity.imposter,

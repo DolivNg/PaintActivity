@@ -1,6 +1,7 @@
 package com.vassa.paintactivity.data.entity.intents
 
 import com.google.gson.annotations.SerializedName
+import com.vassa.paintactivity.data.entity.socket.InfoClientDataEntity
 
 
 data class RoomOptionDataEntity(
@@ -13,4 +14,7 @@ data class RoomOptionDataEntity(
     @SerializedName("timer") var timer : Boolean = false,
     @SerializedName("timeSek") var timeSek : Int = 15,
     @SerializedName("group") var group : String = ""
+)
+data class RoomValuePairs(
+    @SerializedName("nameValuePairs") var nameValuePairs : RoomOptionDataEntity
 )

@@ -4,14 +4,15 @@ import com.vassa.paintactivity.data.entity.socket.InfoClientDataEntity
 import com.vassa.paintactivity.domain.entity.socket.InfoClientDomEntity
 
 class InfoClientConvertor {
-    companion object{
+    companion object {
         fun infoClientDomToDataConvertor(infoClientDomEntity: InfoClientDomEntity): InfoClientDataEntity {
-                     return InfoClientDataEntity(
+            return InfoClientDataEntity(
                 infoClientDomEntity.avatarId,
                 infoClientDomEntity.colorId,
                 infoClientDomEntity.name,
                 infoClientDomEntity.room,
-                infoClientDomEntity.typeCl
+                infoClientDomEntity.typeCl,
+                infoClientDomEntity.key
             )
         }
 
@@ -21,7 +22,8 @@ class InfoClientConvertor {
                 infoClientDataEntity.colorId,
                 infoClientDataEntity.name,
                 infoClientDataEntity.room,
-                infoClientDataEntity.typeCl
+                infoClientDataEntity.typeCl,
+                infoClientDataEntity.key
             )
         }
     }

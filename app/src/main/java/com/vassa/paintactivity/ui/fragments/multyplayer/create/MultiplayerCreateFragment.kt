@@ -1,10 +1,7 @@
 package com.vassa.paintactivity.ui.fragments.multyplayer.create
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.provider.SyncStateContract.Constants
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,16 +10,12 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import androidx.navigation.fragment.findNavController
 import com.vassa.paintactivity.R
-import com.vassa.paintactivity.databinding.FragmentMainMenuBinding
 import com.vassa.paintactivity.databinding.FragmentMultiplayerCreateBinding
-import com.vassa.paintactivity.databinding.FragmentTypeGameMenuBinding
 import com.vassa.paintactivity.domain.entity.pack.FullPackDomEntity
-import com.vassa.paintactivity.ui.constants.SocketConst.Companion.ADMIN_LOBBY_KEY
-import com.vassa.paintactivity.ui.constants.SocketConst.Companion.CLIENT_LOBBY_KEY
-import com.vassa.paintactivity.ui.constants.VectorAssets
+import com.vassa.paintactivity.data.constants.SocketConst.Companion.ADMIN_LOBBY_KEY
+import com.vassa.paintactivity.data.constants.SocketConst.Companion.CLIENT_LOBBY_KEY
+import com.vassa.paintactivity.data.constants.VectorAssets
 import com.vassa.paintactivity.ui.dialogs.pack.PackListDialog
-import com.vassa.paintactivity.ui.fragments.menu.viewmodel.MainMenuViewModel
-import com.vassa.paintactivity.ui.intents.GameOptionIntent
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MultiplayerCreateFragment : Fragment(), PackListDialog.PackFragmentDialogCallBack {

@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.vassa.paintactivity.R
 import com.vassa.paintactivity.databinding.FragmentMainMenuBinding
 import com.vassa.paintactivity.databinding.FragmentTypeGameMenuBinding
-import com.vassa.paintactivity.ui.constants.VectorAssets
+import com.vassa.paintactivity.data.constants.VectorAssets
 import com.vassa.paintactivity.ui.fragments.menu.viewmodel.MainMenuViewModel
 import com.vassa.paintactivity.ui.fragments.typegame.viewmodel.TypeGameMenuViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel

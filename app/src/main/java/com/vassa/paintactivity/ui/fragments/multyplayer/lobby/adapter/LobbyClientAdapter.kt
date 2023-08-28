@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vassa.paintactivity.databinding.LayoutProfileListElementBinding
 import com.vassa.paintactivity.domain.entity.socket.InfoClientDomEntity
 
-class LobbyClientAdapter(var fragment : LobbyAdapterCallback) :
+class LobbyClientAdapter(var fragment : LobbyAdapterCallback,var c : Int) :
 RecyclerView.Adapter<LobbyClientHolder>(), LobbyClientHolder.LobbyHolderCallBack {
 
     private var localViewHolders: ArrayList<LobbyClientHolder> = ArrayList()
@@ -20,7 +20,7 @@ RecyclerView.Adapter<LobbyClientHolder>(), LobbyClientHolder.LobbyHolderCallBack
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LobbyClientHolder {
         val binding = LayoutProfileListElementBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        val holder = LobbyClientHolder(binding.root, binding, this)
+        val holder = LobbyClientHolder(binding.root, binding, this,c)
 
         localViewHolders.add(holder)
         return holder

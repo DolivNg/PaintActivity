@@ -3,11 +3,16 @@ package com.vassa.paintactivity.data.repository
 import android.util.Log
 import com.google.gson.Gson
 import com.vassa.paintactivity.data.constants.SocketConst.Companion.EVENT_USERDATA
+import com.vassa.paintactivity.data.constants.SocketConst.Companion.KICK_CLIENT
 import com.vassa.paintactivity.data.constants.SocketConst.Companion.KNOW_CLIENTS
+import com.vassa.paintactivity.data.constants.SocketConst.Companion.ROOM_DATA
 import com.vassa.paintactivity.data.convertor.socket.InfoClientConvertor
-import com.vassa.paintactivity.data.entity.intents.RoomOptionDataEntity
+import com.vassa.paintactivity.data.convertor.socket.InfoClientConvertor.Companion.infoClientDomToDataConvertor
+import com.vassa.paintactivity.data.convertor.socket.RoomOptionDataConvertor.Companion.roomOptionDataToDomConvertor
+import com.vassa.paintactivity.data.entity.intents.RoomValuePairs
 import com.vassa.paintactivity.data.entity.socket.ValuesCl
 import com.vassa.paintactivity.domain.entity.socket.InfoClientDomEntity
+import com.vassa.paintactivity.domain.entity.socket.RoomOptionDomEntity
 import com.vassa.paintactivity.domain.listener.ListenerSocket
 import com.vassa.paintactivity.domain.repositories.SocketRepository
 import io.socket.client.Socket
@@ -18,6 +23,7 @@ class SocketRepositoryImpl(var socket: Socket) : SocketRepository {
 
     init {
         onConnected()
+        onDataRoom()
         onMeetClients()
         onDisconnect()
     }
@@ -34,20 +40,36 @@ class SocketRepositoryImpl(var socket: Socket) : SocketRepository {
         else
             Log.d("vasa", "connected yet!")
     }
-    override fun disconnect() {
-        socket.disconnect()
-    }
     /**
      * send RoomOption to server
      * */
-    override fun dataRoomEmit(option: RoomOptionDataEntity) {
-        TODO("Not yet implemented")
+    override fun dataRoomEmit(option: RoomOptionDomEntity) {
+        socket.emit(ROOM_DATA,gson.toJson(option))
     }
+
+    override fun disconnect() {
+        socket.disconnect()
+    }
+
+
     /**
      * client emit who kicked
      * */
     override fun kickPlayerEmit(clientDom: InfoClientDomEntity) {
-        TODO("Not yet implemented")
+        socket.emit(KICK_CLIENT,gson.toJson(infoClientDomToDataConvertor(clientDom)))
+    }
+
+    private fun onDataRoom(){
+        socket.on(ROOM_DATA){list->
+            var sen = RoomOptionDomEntity()
+            list.forEach {
+                var a = gson.toJson(it)
+                Log.d("vasa",a)
+                val userData: RoomValuePairs = gson.fromJson(a, RoomValuePairs::class.java)
+                sen = roomOptionDataToDomConvertor(userData.nameValuePairs)
+            }
+            listenerSocket?.onDataRoom(sen)
+        }
     }
 
     /**
@@ -75,14 +97,10 @@ class SocketRepositoryImpl(var socket: Socket) : SocketRepository {
             list.forEach {
                 var a = gson.toJson(it)
 
-                Log.d("vasa", a)
                 val userData: ValuesCl = gson.fromJson(a, ValuesCl::class.java)
                 userData.values.forEach {
                     listInfo.add(InfoClientConvertor.infoClientDataDomToConvertor(it.nameValuePairs))
                 }
-
-                Log.d("vasa", userData.toString())
-
             }
             listenerSocket?.onMeetClients(listInfo)
         }
