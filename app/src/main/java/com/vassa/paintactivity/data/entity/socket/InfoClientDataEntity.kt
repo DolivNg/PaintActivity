@@ -8,6 +8,9 @@ data class InfoClientDataEntity(
     @SerializedName("name") var name : String = "",
     @SerializedName("room") var room : String = "",
     @SerializedName("typeCl") var typeCl : Int = 0,
+    @SerializedName("role") var role : Int = 0,
+    @SerializedName("suspicion")  var suspicion : Int = 0,
+    @SerializedName("votes") var votes : Int = 0,
     @SerializedName("key") var key : Int
 )
 

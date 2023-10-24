@@ -12,6 +12,9 @@ class InfoClientConvertor {
                 infoClientDomEntity.name,
                 infoClientDomEntity.room,
                 infoClientDomEntity.typeCl,
+                infoClientDomEntity.role,
+                infoClientDomEntity.suspicion,
+                infoClientDomEntity.votes,
                 infoClientDomEntity.key
             )
         }
@@ -23,6 +26,9 @@ class InfoClientConvertor {
                 infoClientDataEntity.name,
                 infoClientDataEntity.room,
                 infoClientDataEntity.typeCl,
+                infoClientDataEntity.role,
+                infoClientDataEntity.suspicion,
+                infoClientDataEntity.votes,
                 infoClientDataEntity.key
             )
         }

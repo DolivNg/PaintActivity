@@ -8,5 +8,8 @@ data class InfoClientDomEntity(
      var name : String = "",
      var room : String = "",
      var typeCl : Int = 0,
+     var role : Int = 0,
+     var suspicion : Int = 0,
+     var votes : Int = 0,
      var key : Int = Random(System.currentTimeMillis()).nextInt(10000,99999),
 )
