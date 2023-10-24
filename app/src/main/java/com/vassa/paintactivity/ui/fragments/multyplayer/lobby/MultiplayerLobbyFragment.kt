@@ -83,6 +83,8 @@ class MultiplayerLobbyFragment : Fragment(),LobbyClientAdapter.LobbyAdapterCallb
         viewModel.getRoomOption().observe(viewLifecycleOwner){
             binding.tVIp.text = it.group
         }
+
+        //viewModel.st
         viewModel.connect()
     }
 
@@ -98,6 +100,11 @@ class MultiplayerLobbyFragment : Fragment(),LobbyClientAdapter.LobbyAdapterCallb
     override fun lobbyAdapterCallBack(local: InfoClientDomEntity) {
         viewModel.kickPlayer(local)
     }
+
+    override fun startGame() {
+        TODO("Not yet implemented")
+    }
+
     override fun disconnect() {
         findNavController().navigateUp()
     }

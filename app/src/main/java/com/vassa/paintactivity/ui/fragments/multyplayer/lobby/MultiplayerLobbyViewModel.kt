@@ -143,7 +143,12 @@ class MultiplayerLobbyViewModel(
         hhandler.sendEmptyMessage(1)
     }
 
+    override fun onStartGame() {
+        hhandler.sendEmptyMessage(2)
+    }
+
     interface LobbyCallBack {
+        fun startGame()
         fun disconnect()
     }
 }
