@@ -8,4 +8,6 @@ interface ListenerSocket {
     fun onMeetClients(list : ArrayList<InfoClientDomEntity>)
     fun onDisconnect()
     fun onDataRoom(roomOptionDomEntity: RoomOptionDomEntity)
+
+    fun onStartGame()
 }

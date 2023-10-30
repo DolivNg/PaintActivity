@@ -9,6 +9,7 @@ class SocketConst {
         const val KNOW_CLIENTS = "knowClients"
         const val ROOM_DATA = "roomData"
         const val KICK_CLIENT = "kickClient"
+        const val START_GAME = "startGame"
 
     }
 }

@@ -28,7 +28,7 @@ val dataModule = module {
     }
 
     fun provideSocket(): Socket {
-        return  IO.socket("http://10.1.1.6:3000")// http://192.168.88.26:3000
+        return  IO.socket("http://10.1.1.7:3000")// http://192.168.88.26:3000
     }
 
 //    fun provideCountriesDao(database: CountriesDatabase): CountriesDao {

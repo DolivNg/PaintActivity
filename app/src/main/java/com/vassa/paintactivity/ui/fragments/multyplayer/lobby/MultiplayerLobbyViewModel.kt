@@ -13,7 +13,6 @@ import com.vassa.paintactivity.domain.entity.socket.RoomOptionDomEntity
 import com.vassa.paintactivity.domain.listener.ListenerSocket
 import com.vassa.paintactivity.domain.usecase.GlobalProfileUseCase
 import com.vassa.paintactivity.domain.usecase.socket.SocketUseCase
-import com.vassa.paintactivity.ui.convertor.RoomOptionUiConvertor
 import com.vassa.paintactivity.ui.convertor.RoomOptionUiConvertor.Companion.roomOptionDomToUiConvertor
 import com.vassa.paintactivity.ui.convertor.RoomOptionUiConvertor.Companion.roomOptionUiToDomConvertor
 import com.vassa.paintactivity.ui.intent.RoomOptionIntent
@@ -33,10 +32,18 @@ class MultiplayerLobbyViewModel(
     private var countPlayer = MutableLiveData<Int>()
     private var roomOption = MutableLiveData<RoomOptionIntent>()
     private var tempRoomOption = RoomOptionIntent()
+    private var key = MutableLiveData<InfoClientDomEntity>()
 
     private var hhandler: Handler
     private lateinit var  listener: LobbyCallBack
     init {
+        //loadGlobalProfile()
+        viewModelScope.launch {
+            globalProfile.value = globalProfileUseCase.loadProfile()
+            infoPlayerCreate()
+            usecase.connect()
+        }
+
         infoClients.value = ArrayList()
         usecase.setListener(this)
         hhandler = @SuppressLint("HandlerLeak")
@@ -52,8 +59,15 @@ class MultiplayerLobbyViewModel(
                 if(msg.what == 3){
                     listener.disconnect()
                 }
+                if(msg.what == 2){
+                    listener.startGame()
+                }
             }
         }
+    }
+
+    fun getPlayer() : LiveData<InfoClientDomEntity> {
+        return key
     }
     fun getTypeClient():LiveData<Int>{
         return typeClient
@@ -96,31 +110,35 @@ class MultiplayerLobbyViewModel(
         roomGen.value = room
     }
 
-    fun loadGlobalProfile() {
-        viewModelScope.launch {
+    suspend fun loadGlobalProfile() {
+        /*viewModelScope.launch {
             withContext(Dispatchers.Main) {
-                globalProfile.value = globalProfileUseCase.loadProfile()
+
             }
-        }
+        }*/
     }
 
     fun getGlobalProfile(): LiveData<GlobalProfileDomEntity> {
         return globalProfile
     }
 
+    fun infoPlayerCreate(){
+        key.value = InfoClientDomEntity(
+            globalProfile.value!!.avatar,
+            globalProfile.value!!.color,
+            globalProfile.value!!.name,
+            roomGen.value.toString(),
+            typeClient.value!!,
+        )
+    }
+
     fun disconnect() {
         usecase.disconnect()
     }
-
     override fun onConnect() {
+
         usecase.acquaintanceOnce(
-            InfoClientDomEntity(
-                globalProfile.value!!.avatar,
-                globalProfile.value!!.color,
-                globalProfile.value!!.name,
-                roomGen.value.toString(),
-                typeClient.value!!,
-            )
+            key.value!!
         )
         usecase.roomDataEmit(roomOptionUiToDomConvertor(roomOption.value!!))
     }
@@ -134,11 +152,15 @@ class MultiplayerLobbyViewModel(
         //
     }
 
+    fun startGame(){
+        usecase.startGame()
+    }
+
     override fun onDisconnect() {
         hhandler.sendEmptyMessage(3)
     }
 
-    override fun onDataRoom(roomOptionDomEntity: RoomOptionDomEntity) {
+     override fun onDataRoom(roomOptionDomEntity: RoomOptionDomEntity) {
         tempRoomOption = roomOptionDomToUiConvertor(roomOptionDomEntity)
         hhandler.sendEmptyMessage(1)
     }

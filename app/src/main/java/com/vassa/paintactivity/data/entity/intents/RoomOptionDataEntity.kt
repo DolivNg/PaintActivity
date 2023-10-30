@@ -5,16 +5,17 @@ import com.vassa.paintactivity.data.entity.socket.InfoClientDataEntity
 
 
 data class RoomOptionDataEntity(
-    @SerializedName("playerCount")  var playerCount : Int = 5,
-    @SerializedName("imposter") var imposter : Int = 1,
-    @SerializedName("author") var author : Boolean = false,
-    @SerializedName("pack_id") var pack_id : Int = 1,
-    @SerializedName("lang") var lang : Int = 1,
-    @SerializedName("inkCount") var inkCount : Int =20,
-    @SerializedName("timer") var timer : Boolean = false,
-    @SerializedName("timeSek") var timeSek : Int = 15,
-    @SerializedName("group") var group : String = ""
+    @SerializedName("playerCount") var playerCount: Int = 5,
+    @SerializedName("imposter") var imposter: Int = 1,
+    @SerializedName("author") var author: Boolean = false,
+    @SerializedName("pack_id") var pack_id: Int = 1,
+    @SerializedName("lang") var lang: Int = 1,
+    @SerializedName("inkCount") var inkCount: Int = 20,
+    @SerializedName("timer") var timer: Boolean = false,
+    @SerializedName("timeSek") var timeSek: Int = 15,
+    @SerializedName("group") var group: String = ""
 )
+
 data class RoomValuePairs(
-    @SerializedName("nameValuePairs") var nameValuePairs : RoomOptionDataEntity
+    @SerializedName("nameValuePairs") var nameValuePairs: RoomOptionDataEntity
 )

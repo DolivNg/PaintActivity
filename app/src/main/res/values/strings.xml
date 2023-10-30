@@ -88,4 +88,8 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="tv_imposet_answer">Imposter`s answer</string>
+    <string name="author_write">Author write</string>
+    <string name="tv_your_turn">Your turn!</string>
+    <string name="bttn_ok">Ok</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.activity.OnBackPressedDispatcher
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.vassa.paintactivity.R
 import com.vassa.paintactivity.data.constants.SocketConst.Companion.ADMIN_LOBBY_KEY
 import com.vassa.paintactivity.data.constants.SocketConst.Companion.CLIENT_LOBBY_KEY
 import com.vassa.paintactivity.databinding.FragmentMultiplayerLobbyBinding
@@ -20,11 +21,12 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.random.Random
 
 
-class MultiplayerLobbyFragment : Fragment(),LobbyClientAdapter.LobbyAdapterCallback,MultiplayerLobbyViewModel.LobbyCallBack {
+class MultiplayerLobbyFragment : Fragment(), LobbyClientAdapter.LobbyAdapterCallback,
+    MultiplayerLobbyViewModel.LobbyCallBack {
     private var _binding: FragmentMultiplayerLobbyBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MultiplayerLobbyViewModel by viewModel<MultiplayerLobbyViewModel>()
-    private lateinit var adapter : LobbyClientAdapter
+    private lateinit var adapter: LobbyClientAdapter
 
 
     companion object {
@@ -51,49 +53,58 @@ class MultiplayerLobbyFragment : Fragment(),LobbyClientAdapter.LobbyAdapterCallb
             }
         }
 
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            onBackPressedCallback
+        )
 
-        viewModel.loadGlobalProfile()
+        //viewModel.loadGlobalProfile()
+
         viewModel.setListener(this)
         val client = arguments?.getParcelable<RoomOptionIntent>(CLIENT_LOBBY_KEY)
         val admin = arguments?.getParcelable<RoomOptionIntent>(ADMIN_LOBBY_KEY)
 
-        if (client != null){
+        if (client != null) {
             viewModel.setRoomOption(client)
             viewModel.setTypeCl(0)
             viewModel.setRoom(client.group.toInt())
         }
-        if (admin != null){
+        if (admin != null) {
             viewModel.setRoomOption(admin)
             viewModel.setTypeCl(1)
             roomGeneration()
         }
-        adapter = LobbyClientAdapter(this,viewModel.getTypeClient().value!!)
+        adapter = LobbyClientAdapter(this, viewModel.getTypeClient().value!!)
         binding.recVLobby.layoutManager = LinearLayoutManager(context)
         binding.recVLobby.adapter = adapter
 
-        viewModel.getInfoClients().observe(viewLifecycleOwner){
+        viewModel.getInfoClients().observe(viewLifecycleOwner) {
             adapter.setList(it)
         }
 
-        viewModel.getCountPLayer().observe(viewLifecycleOwner){
+        viewModel.getCountPLayer().observe(viewLifecycleOwner) {
             binding.tVCountPlayerLobby.text = "$it/${viewModel.getRoomOption().value!!.playerCount}"
         }
 
-        viewModel.getRoomOption().observe(viewLifecycleOwner){
+        viewModel.getRoomOption().observe(viewLifecycleOwner) {
             binding.tVIp.text = it.group
         }
 
+        binding.bttnPlayMultiplayer.setOnClickListener {
+            viewModel.startGame()
+        }
+        //viewModel.loadGlobalProfile()
         //viewModel.st
-        viewModel.connect()
+        //viewModel.infoPlayerCreate()
+        //viewModel.connect()
     }
 
-    private fun roomGeneration(){
-        var room  = Random(System.currentTimeMillis()).nextInt(9)*10000+
-                Random(System.currentTimeMillis()+2).nextInt(9)*1000+
-                Random(System.currentTimeMillis()+5).nextInt(9)*100+
-                Random(System.currentTimeMillis()+7).nextInt(9)*10+
-                Random(System.currentTimeMillis()+1).nextInt(9)
+    private fun roomGeneration() {
+        var room = Random(System.currentTimeMillis()).nextInt(9) * 10000 +
+                Random(System.currentTimeMillis() + 2).nextInt(9) * 1000 +
+                Random(System.currentTimeMillis() + 5).nextInt(9) * 100 +
+                Random(System.currentTimeMillis() + 7).nextInt(9) * 10 +
+                Random(System.currentTimeMillis() + 1).nextInt(9)
         viewModel.setRoom(room)
     }
 
@@ -102,7 +113,21 @@ class MultiplayerLobbyFragment : Fragment(),LobbyClientAdapter.LobbyAdapterCallb
     }
 
     override fun startGame() {
-        TODO("Not yet implemented")
+        var bundle = Bundle()
+
+        val client = arguments?.getParcelable<RoomOptionIntent>(CLIENT_LOBBY_KEY)
+        val admin = arguments?.getParcelable<RoomOptionIntent>(ADMIN_LOBBY_KEY)
+
+        if (client != null)
+            bundle.putInt(CLIENT_LOBBY_KEY, viewModel.getPlayer().value!!.key)
+        else {
+            if (admin != null)
+                bundle.putInt(CLIENT_LOBBY_KEY, viewModel.getPlayer().value!!.key)
+        }
+        findNavController().navigate(
+            R.id.action_multiplayerLobbyFragment_to_gameMultiplayerFragment,
+            bundle
+        )
     }
 
     override fun disconnect() {

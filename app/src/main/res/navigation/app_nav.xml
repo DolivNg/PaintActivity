@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_nav"
-    app:startDestination="@id/gameMultiplayerFragment">
+    app:startDestination="@id/mainMenuFragment">
 
     <fragment
         android:id="@+id/mainMenuFragment"
@@ -59,7 +59,11 @@
         android:id="@+id/multiplayerLobbyFragment"
         android:name="com.vassa.paintactivity.ui.fragments.multyplayer.lobby.MultiplayerLobbyFragment"
         android:label="fragment_multiplayer_lobby"
-        tools:layout="@layout/fragment_multiplayer_lobby" />
+        tools:layout="@layout/fragment_multiplayer_lobby" >
+        <action
+            android:id="@+id/action_multiplayerLobbyFragment_to_gameMultiplayerFragment"
+            app:destination="@id/gameMultiplayerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/optionFragment"
         android:name="com.vassa.paintactivity.ui.fragments.option.OptionFragment"

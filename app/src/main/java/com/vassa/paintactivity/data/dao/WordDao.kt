@@ -22,7 +22,7 @@ interface WordDao {
     suspend fun getWordDataEntityFromPack(id: Int): WordDataEntity
 
     @Query("SELECT * FROM word WHERE pack_id = :packId AND lang_id= :langId")
-    suspend fun getWordDataEntityFromPack(packId: Int, langId: Int): WordDataEntity
+    suspend fun getWordDataEntityFromPack(packId: Int, langId: Int): List<WordDataEntity>
 
     @Query("DELETE FROM word WHERE _id = :id")
     suspend fun deleteWordDataEntityById(id: Int)

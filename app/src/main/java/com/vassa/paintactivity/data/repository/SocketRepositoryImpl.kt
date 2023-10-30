@@ -6,6 +6,7 @@ import com.vassa.paintactivity.data.constants.SocketConst.Companion.EVENT_USERDA
 import com.vassa.paintactivity.data.constants.SocketConst.Companion.KICK_CLIENT
 import com.vassa.paintactivity.data.constants.SocketConst.Companion.KNOW_CLIENTS
 import com.vassa.paintactivity.data.constants.SocketConst.Companion.ROOM_DATA
+import com.vassa.paintactivity.data.constants.SocketConst.Companion.START_GAME
 import com.vassa.paintactivity.data.convertor.socket.InfoClientConvertor
 import com.vassa.paintactivity.data.convertor.socket.InfoClientConvertor.Companion.infoClientDomToDataConvertor
 import com.vassa.paintactivity.data.convertor.socket.RoomOptionDataConvertor.Companion.roomOptionDataToDomConvertor
@@ -26,6 +27,7 @@ class SocketRepositoryImpl(var socket: Socket) : SocketRepository {
         onDataRoom()
         onMeetClients()
         onDisconnect()
+        onStartGame()
     }
 
     var listenerSocket: ListenerSocket? = null
@@ -85,6 +87,15 @@ class SocketRepositoryImpl(var socket: Socket) : SocketRepository {
             EVENT_USERDATA,
             gson.toJson(InfoClientConvertor.infoClientDomToDataConvertor(infoConnectEntity))
         )
+    }
+
+    override fun startGame() {
+        socket.emit(START_GAME)
+    }
+    private fun onStartGame(){
+        socket.on(START_GAME){
+            listenerSocket?.onStartGame()
+        }
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /**

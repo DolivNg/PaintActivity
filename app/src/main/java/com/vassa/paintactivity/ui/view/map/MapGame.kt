@@ -2,10 +2,14 @@ package com.vassa.paintactivity.ui.view.map
 
 
 
+import android.graphics.PointF
 import com.vassa.paintactivity.gsdk.map.mapdata.GeneratedMap
 import com.vassa.paintactivity.gsdk.`object`.baseobject.BaseObject
 import com.vassa.paintactivity.gsdk.`object`.baseobject.ObParameter
+import com.vassa.paintactivity.gsdk.`object`.baseobject.Size
 import com.vassa.paintactivity.gsdk.`object`.gameobject.GameObject
+import com.vassa.paintactivity.ui.view.constants.DataTypesObjects.Companion.PENCIL
+import com.vassa.paintactivity.ui.view.objects.Pencil
 
 
 class MapGame : BaseObject.ObjectBaseFunction {
@@ -20,7 +24,8 @@ class MapGame : BaseObject.ObjectBaseFunction {
         var index = 0
         //Back Layer
         //Middle Layer
-
+        generatedMap.mapMiddle[PENCIL] = ArrayList()
+        generatedMap.mapMiddle[PENCIL]?.add(Pencil(Size(100,100), PointF(0F,0F),PENCIL,1))
         /*pool.MachineSound()
         generatedMap.mapMiddle[MACHINE_TYPE] = ArrayList()
         generatedMap.mapMiddle[MACHINE_TYPE]?.add(

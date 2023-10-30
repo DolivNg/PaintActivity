@@ -20,6 +20,10 @@ class SocketUseCase(var socketRepository: SocketRepository) {
         socketRepository.disconnect()
     }
 
+    fun startGame(){
+        socketRepository.startGame()
+    }
+
     fun kickPlayer(clientDomEntity: InfoClientDomEntity){
         socketRepository.kickPlayerEmit(clientDomEntity)
     }

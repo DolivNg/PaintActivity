@@ -13,7 +13,7 @@ import com.vassa.paintactivity.databinding.LayoutSelectAvatarBinding
 import com.vassa.paintactivity.domain.entity.avatar.AvatarDomEntity
 import com.vassa.paintactivity.data.constants.VectorAssets
 
-class ChoosingAvatarDialog(val chooser : ChooseAvatarCallBack) : DialogFragment() {
+class ChoosingAvatarDialog(private val chooser : ChooseAvatarCallBack) : DialogFragment() {
 
     private var _binding: LayoutSelectAvatarBinding? = null
     private val binding get() = _binding!!
@@ -22,7 +22,7 @@ class ChoosingAvatarDialog(val chooser : ChooseAvatarCallBack) : DialogFragment(
     private var dataAvatar = ArrayList<AvatarDomEntity>()
     private var tag = ""
 
-    //TODO TEST
+
     init {
         for (i in 0 until VectorAssets.vectors.size)
             dataAvatar.add(AvatarDomEntity(i,i<5))

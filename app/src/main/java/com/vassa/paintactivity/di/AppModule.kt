@@ -1,7 +1,7 @@
 package com.vassa.paintactivity.di
 
 import com.vassa.paintactivity.ui.fragments.achivmets.AchivmentViewModel
-import com.vassa.paintactivity.ui.fragments.game.multiplayer.GameMultiplayerViewModel
+import com.vassa.paintactivity.ui.fragments.game.multiplayer.game.GameMultiplayerViewModel
 import com.vassa.paintactivity.ui.fragments.local.LocalGameViewModel
 import com.vassa.paintactivity.ui.fragments.makepen.modelview.MakePenViewModel
 import com.vassa.paintactivity.ui.fragments.menu.viewmodel.MainMenuViewModel
@@ -61,7 +61,7 @@ val appModule = module {
     }
 
     viewModel<GameMultiplayerViewModel> {
-        GameMultiplayerViewModel(get())
+        GameMultiplayerViewModel(get(),get(),get())
     }
 
 }

@@ -12,6 +12,8 @@ interface SocketRepository {
     fun dataRoomEmit(option: RoomOptionDomEntity)
     fun kickPlayerEmit(clientDom: InfoClientDomEntity)
     fun acquaintanceEmit(infoConnectEntity : InfoClientDomEntity)
+
+    fun startGame()
     fun disconnect()
 
 }
